@@ -1,51 +1,49 @@
-import * as React from "react"
-import Navbar from "../components/Navbar/Navbar";
-import { Helmet } from "react-helmet";
-
-// styles
-const styles = {
-  pageStyles: {
-    color: "#232129",
-    padding: 96,
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  },
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
+import * as React from 'react';
+import Navbar from '../components/Navbar/Navbar';
+import { Helmet } from 'react-helmet';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // markup
 const IndexPage = () => {
-  return (
-    <main style={styles.pageStyles}>
-      <Helmet title="Zavod Home" defer={false} />
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <Navbar />
-      <p style={paragraphStyles}>
-        hello world
-      </p>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+    return (
+        <>
+            <Navbar />
 
-export default IndexPage
+            <Helmet title='Zavod Home' defer={false}>
+                <title>Home Page</title>
+            </Helmet>
+
+            <div style={{ display: 'grid' }}>
+                <StaticImage
+                    style={{
+                        gridArea: '1/1',
+
+                        // maxHeight: 600,
+                    }}
+                    layout='fullWidth'
+                    // You can optionally force an aspect ratio for the generated image
+                    aspectRatio={3 / 1}
+                    // This is a presentational image, so the alt should be an empty string
+                    alt=''
+                    // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
+                    src={'../images/zavod31.jpg'}
+                    formats={['auto', 'webp', 'avif']}
+                />
+                <div
+                    style={{
+                        // By using the same grid area for both, they are stacked on top of each other
+                        gridArea: '1/1',
+                        position: 'relative',
+                        // This centers the other elements inside the hero component
+                        placeItems: 'center',
+                        display: 'grid',
+                    }}
+                >
+                    {/* Any content here will be centered in the component */}
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default IndexPage;

@@ -25,13 +25,5 @@ module.exports = {
       },
       __key: "images",
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs`,
-        path: `${__dirname}/docs`,
-      },
-    },
-    "gatsby-plugin-mdx",
   ],
 };

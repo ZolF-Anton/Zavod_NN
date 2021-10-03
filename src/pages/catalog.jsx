@@ -1,12 +1,11 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby";
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Navbar from "../components/Navbar/Navbar";
+import { Helmet } from "react-helmet";
 
-const CatalogPage = ({ data }) => {
-  console.log('catalog => data', data);
-
+const CatalogPage = () => {
   return (
     <main>
+      <Helmet title="Catalog Page" defer={false} />
       <title>Catalog Page</title>
       <h1>
         Catalog page !!!
@@ -14,26 +13,7 @@ const CatalogPage = ({ data }) => {
           🎉🎉🎉
         </span>
       </h1>
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/price'>Price</Link>
-        <Link to='/catalog'>Catalog</Link>
-      </nav>
-      <div>
-        <div>
-          {
-            data.allMdx.nodes.map((node) => (
-              <article key={node.id}>
-                <h2>{JSON.stringify(node.headings)}</h2>
-                <MDXRenderer>
-                  {node.body}
-                </MDXRenderer>
-              </article>
-            ))
-          }
-        </div>
-      </div>
+      <Navbar />
       <img
         alt="Gatsby G Logo"
         src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
@@ -41,20 +21,5 @@ const CatalogPage = ({ data }) => {
     </main>
   )
 }
-
-export const query = graphql`
-   query MyQuery {
-    allMdx {
-      nodes {
-        headings {
-          value
-          depth
-        }
-        body
-        id
-      }
-    }
-  }
-`;
 
 export default CatalogPage

@@ -11,17 +11,17 @@ const Header = () => {
                     style={{
                         gridArea: '1/1',
 
-                        // maxHeight: 600,
+                        maxHeight: 1000,
                     }}
-                    layout="fullWidth"
+                    layout='fullWidth'
                     // You can optionally force an aspect ratio for the generated image
-                    aspectRatio={3 / 2}
+                    //aspectRatio={21 / 9}
                     // This is a presentational image, so the alt should be an empty string
-                    alt="plant"
+                    alt='plant'
                     // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
                     src={'../images/zavod31.jpg'}
                     formats={['auto', 'webp', 'avif']}
-                    placeholder="blurred"
+                    placeholder='blurred'
                     // use filters to interact with backG-img
                     transformOptions={{
                         duotone: { shadow: '#0b162b', highlight: '#919191', opacity: 65 },
@@ -33,7 +33,7 @@ const Header = () => {
                         gridArea: '1/1',
                         position: 'relative',
                         // This centers the other elements inside the hero component
-                        placeItems: 'start',
+                        //placeItems: 'start center',
                         display: 'grid',
                     }}
                 >

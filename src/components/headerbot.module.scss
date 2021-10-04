@@ -1,12 +1,16 @@
 .skills-wrap {
     display: flex;
     padding: 0 5rem;
+    column-gap: 4rem;
 }
 
 .skill-item {
     color: whitesmoke;
+    max-width: 16rem;
 }
 
 .skill-item::before {
-    content: ' ';
+    content: url(../images/icons/header/iconMedal.svg);
+    position: absolute;
+    transform: translateX(-40px);
 }

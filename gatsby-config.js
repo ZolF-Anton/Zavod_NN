@@ -7,7 +7,7 @@ module.exports = {
     plugins: [
         'gatsby-plugin-sass',
         'gatsby-plugin-image',
-        'gatsby-background-image',
+
         {
             resolve: 'gatsby-plugin-google-analytics',
             options: {
@@ -18,6 +18,22 @@ module.exports = {
         'gatsby-plugin-sitemap',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
+
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `Zavod KD`,
+                short_name: `Zavod`,
+                description: `The Factory for the production of first-class mufflers for cars.`,
+                lang: `ru`,
+                display: `standalone`,
+                icon: `src/images/favicon/logo.png`,
+                start_url: `/`,
+                background_color: `#663399`,
+                theme_color: `#fff`,
+            },
+        },
+
         {
             resolve: 'gatsby-source-filesystem',
             options: {

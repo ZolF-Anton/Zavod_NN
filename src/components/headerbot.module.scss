@@ -1,0 +1,12 @@
+.skills-wrap {
+    display: flex;
+    padding: 0 5rem;
+}
+
+.skill-item {
+    color: whitesmoke;
+}
+
+.skill-item::before {
+    content: ' ';
+}

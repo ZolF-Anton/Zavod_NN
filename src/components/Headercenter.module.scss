@@ -1,0 +1,28 @@
+.title {
+    max-width: 612px;
+    min-height: 243px;
+    color: whitesmoke;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 150%;
+    padding-left: 7rem;
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        max-width: 500px;
+        font-size: 44px;
+        line-height: 110%;
+        padding-left: 5rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .title {
+        max-width: 400px;
+        font-size: 34px;
+        line-height: 110%;
+        padding-left: 3rem;
+    }
+}

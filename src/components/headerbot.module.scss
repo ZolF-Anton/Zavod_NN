@@ -1,16 +1,31 @@
 .skills-wrap {
     display: flex;
+    flex-wrap: wrap;
     padding: 0 5rem;
-    column-gap: 4rem;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .skill-item {
     color: whitesmoke;
     max-width: 16rem;
+    &::before {
+        content: url(../images/icons/header/iconMedal.svg);
+        position: absolute;
+        transform: translateX(-40px);
+    }
+}
+.skill-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.skill-item::before {
-    content: url(../images/icons/header/iconMedal.svg);
-    position: absolute;
-    transform: translateX(-40px);
+.skill-descr {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
 }

@@ -5,7 +5,8 @@ import logo from '/src/images/logo-s.svg';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
+    //const handleClick = () => setClick(!click);
+    const handleClick = () => setClick((prevState) => !prevState);
     return (
         <nav className={style.navbar}>
             <div className={style.navContainer}>

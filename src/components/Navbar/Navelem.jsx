@@ -15,7 +15,6 @@ function Navelem(props) {
                 to={props.path}
                 onClick={() => handleFlag()}
             >
-                {console.log(props.click)}
                 {props.name}
             </Link>
         </li>

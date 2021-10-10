@@ -1,0 +1,58 @@
+@import '../colors.module.scss';
+
+.footer {
+    &-main {
+        padding: 3rem 3rem 0;
+        //margin-top: 2rem;
+        display: grid;
+        grid-template: 1fr /1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    &-logo {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    &-nav {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    &-title {
+        color: $Sec-Gray;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    &-item {
+        color: $Corp-Black;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    &-block {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.3rem;
+    }
+    &-phone {
+        font-size: 24px;
+    }
+    &-schedule {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    &-email {
+        font-size: 16px;
+    }
+    &-politics {
+        display: flex;
+        column-gap: 5rem;
+        justify-content: center;
+    }
+}

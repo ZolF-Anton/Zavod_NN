@@ -1,54 +1,35 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import { Navelem } from './Navelem';
+import { NavPhone } from './Navelem';
 import * as style from './navbar.module.scss';
 import logo from '/src/images/logo-s.svg';
+import logoT from '/src/images/logo-s-t.svg';
+import home from '../../images/icons/nav/home.svg';
+import list1 from '../../images/icons/nav/list1.svg';
+import contacts from '../../images/icons/nav/contacts.svg';
+import about from '../../images/icons/nav/about.svg';
+import price from '../../images/icons/nav/price.svg';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
-    //const handleClick = () => setClick(!click);
     const handleClick = () => setClick((prevState) => !prevState);
     return (
         <nav className={style.navbar}>
             <div className={style.navContainer}>
-                <Link exact to="/" className={style.navLogo}>
-                    <img src={logo} alt="logo" />
+                <Link exact to='/' className={style.navLogo}>
+                    <img src={logo} alt='logo' />
+                    <img src={logoT} alt='logo' />
                 </Link>
 
                 <ul className={click ? style.navMenuActive : style.navMenu}>
-                    <li className={style.navItem}>
-                        <Link className={style.navLinks} activeClassName={style.active} to="/">
-                            ГЛАВНАЯ
-                        </Link>
-                    </li>
-                    <li className={style.navItem}>
-                        <Link
-                            className={style.navLinks}
-                            activeClassName={style.active}
-                            to="/catalog"
-                        >
-                            КАТАЛОГ
-                        </Link>
-                    </li>
-                    <li className={style.navItem}>
-                        <Link
-                            className={style.navLinks}
-                            activeClassName={style.active}
-                            to="/contacts"
-                        >
-                            КОНТАКТЫ
-                        </Link>
-                    </li>
-                    <li className={style.navItem}>
-                        <Link className={style.navLinks} activeClassName={style.active} to="/about">
-                            О НАС
-                        </Link>
-                    </li>
-                    <li className={style.navItem}>
-                        <Link className={style.navLinks} activeClassName={style.active} to="/price">
-                            ЦЕНЫ
-                        </Link>
-                    </li>
+                    <Navelem path={'/'} name={'ГЛАВНАЯ'} icon={home} />
+                    <Navelem path={'/catalog'} name='КАТАЛОГ' icon={list1} />
+                    <Navelem path={'/contacts'} name='КОНТАКТЫ' icon={contacts} />
+                    <Navelem path={'/about'} name='О НАС' icon={about} />
+                    <Navelem path={'/price'} name={'ПРАЙС'} icon={price} />
                 </ul>
+                <NavPhone />
                 <button className={style.navIcon} onClick={handleClick}>
                     {click ? <BurgerMenuClose /> : <BurgerMenu />}
                 </button>

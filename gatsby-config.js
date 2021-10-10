@@ -5,7 +5,9 @@ module.exports = {
         description: 'hello desc',
     },
     plugins: [
-        'gatsby-plugin-sass',
+        {
+            resolve: `gatsby-plugin-sass`,
+        },
         'gatsby-plugin-image',
 
         {

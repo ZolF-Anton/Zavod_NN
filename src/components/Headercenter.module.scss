@@ -7,7 +7,28 @@
     font-weight: 900;
     font-size: 54px;
     line-height: 150%;
-    padding-left: 7rem;
+    padding-left: 6rem;
+}
+.header-circle {
+    width: 6rem;
+    height: 6rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 100%;
+}
+.kalimagi {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+}
+.img-auto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 112px;
+    background: rgba(225, 255, 255, 0.85);
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 576px) {

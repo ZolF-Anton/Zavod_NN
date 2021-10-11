@@ -13,6 +13,8 @@ import {
     footerAdress,
     footerPolitics,
     footerDevs,
+    footerPitem,
+    footerLine,
 } from './footer.module.scss';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -25,16 +27,16 @@ function Footer() {
             <div className={footerMain}>
                 <div className={footerLogo}>
                     <StaticImage
-                        src='../../images/logo-s.svg'
-                        alt='logo first'
+                        src="../../images/logo-s.svg"
+                        alt="logo first"
                         width={160}
-                        layout='fixed'
+                        layout="fixed"
                     />
                     <StaticImage
-                        src='../../images/logo-s-t.svg'
-                        alt='logo first'
+                        src="../../images/logo-s-t.svg"
+                        alt="logo first"
                         width={110}
-                        layout='fixed'
+                        layout="fixed"
                     />
                 </div>
                 <div className={footerNav}>
@@ -50,33 +52,34 @@ function Footer() {
                 <div className={footerInfo}>
                     <div className={footerBlock}>
                         <div className={footerTitle}>Телефон:</div>
-                        <div className={footerPhone}>+7 (812) 603-73-77</div>
+                        <div className={footerPhone}>+7 (863) 303-30-44</div>
                     </div>
                     <div className={footerBlock}>
                         <div className={footerTitle}>График работы:</div>
                         <div className={footerSchedule}>Понедельник-Пятница</div>
-                        <div className={footerSchedule}>08:00 - 19:00</div>
+                        <div className={footerSchedule}>08:00 - 17:00</div>
                     </div>
                     <div className={footerBlock}>
                         <div className={footerTitle}>Email:</div>
-                        <div className={footerEmail}>office@promimpuls.ru</div>
+                        <div className={footerEmail}>DDobrota@mail.ru</div>
                     </div>
                     <div className={footerBlock}>
                         <div className={footerTitle}>Адрес:</div>
-                        <div className={footerAdress}>
-                            196084, г. Санкт-Петербург, ул. Рощинская, д. 5, лит. И
-                        </div>
+                        <div className={footerAdress}>347740, г. Зерноград, ул. Ленина, 16Е</div>
                     </div>
                 </div>
             </div>
+            <div className={footerLine}></div>
             <div className={footerPolitics}>
                 {/* сделать ссылки */}
-                <div className='footer-pitem'>Обработка персональных данных</div>
-                <div className='footer-pitem'>Политика конфиденциальности</div>
-                <div className='footer-pitem'>
+
+                <div className={footerPitem}>Обработка персональных данных</div>
+                <div className={footerPitem}>Политика конфиденциальности</div>
+                <div className={footerPitem}>
                     Завод глушителей "КД" и "ТДГ" | zavod-kd.ru ©{getCurrentYear()}
                 </div>
             </div>
+
             <div className={footerDevs}>Дизайн&Разработка:</div>
         </footer>
     );

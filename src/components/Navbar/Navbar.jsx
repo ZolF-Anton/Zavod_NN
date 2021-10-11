@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Navelem } from './Navelem';
 import { NavPhone } from './Navelem';
-import * as style from './navbar.module.scss';
+import {
+    navbar,
+    navContainer,
+    navLogo,
+    navMenuActive,
+    navMenu,
+    navIcon,
+    navMenuLine,
+    navMenuClose,
+} from './navbar.module.scss';
 import logo from '/src/images/logo-s.svg';
 import logoT from '/src/images/logo-s-t.svg';
 import home from '../../images/icons/nav/home.svg';
@@ -14,23 +23,26 @@ import price from '../../images/icons/nav/price.svg';
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick((prevState) => !prevState);
+    const [flag, setFlag] = useState(false);
+    const handleFlag = () => setFlag((prevState) => !prevState);
+
     return (
-        <nav className={style.navbar}>
-            <div className={style.navContainer}>
-                <Link exact to='/' className={style.navLogo}>
-                    <img src={logo} alt='logo' />
-                    <img src={logoT} alt='logo' />
+        <nav className={navbar}>
+            <div className={navContainer}>
+                <Link exact to="/" className={navLogo}>
+                    <img src={logo} alt="logo" />
+                    <img src={logoT} alt="logo" />
                 </Link>
 
-                <ul className={click ? style.navMenuActive : style.navMenu}>
+                <ul className={click ? navMenuActive : navMenu}>
                     <Navelem path={'/'} name={'ГЛАВНАЯ'} icon={home} />
-                    <Navelem path={'/catalog'} name='КАТАЛОГ' icon={list1} />
-                    <Navelem path={'/contacts'} name='КОНТАКТЫ' icon={contacts} />
-                    <Navelem path={'/about'} name='О НАС' icon={about} />
+                    <Navelem path={'/catalog'} name="КАТАЛОГ" icon={list1} />
+                    <Navelem path={'/contacts'} name="КОНТАКТЫ" icon={contacts} />
+                    <Navelem path={'/about'} name="О НАС" icon={about} />
                     <Navelem path={'/price'} name={'ПРАЙС'} icon={price} />
                 </ul>
                 <NavPhone />
-                <button className={style.navIcon} onClick={handleClick}>
+                <button className={navIcon} onClick={handleClick}>
                     {click ? <BurgerMenuClose /> : <BurgerMenu />}
                 </button>
             </div>
@@ -43,18 +55,18 @@ export default Navbar;
 const BurgerMenu = () => {
     return (
         <>
-            <div className={style.navMenuLine}></div>
-            <div className={style.navMenuLine}></div>
-            <div className={style.navMenuLine}></div>
+            <div className={navMenuLine}></div>
+            <div className={navMenuLine}></div>
+            <div className={navMenuLine}></div>
         </>
     );
 };
 const BurgerMenuClose = () => {
     return (
         <>
-            <div className={style.navMenuClose}></div>
-            <div className={style.navMenuClose}></div>
-            <div className={style.navMenuClose}></div>
+            <div className={navMenuClose}></div>
+            <div className={navMenuClose}></div>
+            <div className={navMenuClose}></div>
         </>
     );
 };

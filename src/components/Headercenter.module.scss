@@ -1,11 +1,24 @@
+@import './colors.module.scss';
+
 .title {
+    max-width: 612px;
+    min-height: 243px;
+    color: $White;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 150%;
+    padding-left: 6rem;
+}
+.subtitle {
     max-width: 612px;
     min-height: 243px;
     color: whitesmoke;
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
-    font-size: 54px;
+    font-size: 22px;
     line-height: 150%;
     padding-left: 6rem;
 }

@@ -67,7 +67,11 @@
     &-devs {
         margin-top: 0.3rem;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         color: $Sec-Gray;
+        font-size: 10px;
+    }
+    &-pitem {
+        font-size: 12px;
     }
 }

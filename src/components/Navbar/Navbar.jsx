@@ -23,8 +23,6 @@ import price from '../../images/icons/nav/price.svg';
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick((prevState) => !prevState);
-    const [flag, setFlag] = useState(false);
-    const handleFlag = () => setFlag((prevState) => !prevState);
 
     return (
         <nav className={navbar}>

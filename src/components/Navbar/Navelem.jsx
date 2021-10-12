@@ -8,12 +8,17 @@ function Navelem(props) {
         return isCurrent ? setFlag(true) : setFlag(false);
     };
     const [flag, setFlag] = useState(false);
-    const handleFlag = () => setFlag((prevState) => !prevState);
+    //const handleFlag = () => setFlag((prevState) => !prevState);
     return (
         <li className={navItem}>
-            <img className={flag ? imgActive : imgPass} src={props.icon} alt='' />
+            <img className={flag ? imgActive : imgPass} src={props.icon} alt="" />
             {/* getProps={isActive} */}
-            <Link className={navLinks} activeClassName={active} to={props.path}>
+            <Link
+                className={flag ? active : navLinks}
+                getProps={isActive}
+                //activeClassName={active}
+                to={props.path}
+            >
                 {props.name}
             </Link>
         </li>
@@ -24,8 +29,8 @@ export { Navelem };
 function NavPhone() {
     return (
         <div className={navPhones}>
-            <a href='tel:+79094125558'>+7(909)412‐55‐58</a>
-            <a href='tel:+78633033044'>+7(863)303-30-44</a>
+            <a href="tel:+79094125558">+7(909)412‐55‐58</a>
+            <a href="tel:+78633033044">+7(863)303-30-44</a>
         </div>
     );
 }

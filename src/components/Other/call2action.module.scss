@@ -1,0 +1,36 @@
+@import '../colors.module.scss';
+
+section {
+    padding: 60px 10rem;
+}
+
+h3 {
+    color: $Corp-Red;
+    font-family: Montserrat;
+
+    font-weight: bold;
+    font-size: 48px;
+}
+p {
+    font-size: 24px;
+    color: $Sec-Gray;
+    margin-top: 45px;
+}
+
+button {
+    //font-family: Montserrat;
+    font-weight: bold;
+    margin-top: 45px;
+    background-color: $Corp-Blue;
+    width: 331px;
+    height: 55px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: $Ctr-White;
+}
+
+button:disabled {
+    background-color: $Sec-Gray;
+    cursor: not-allowed;
+}

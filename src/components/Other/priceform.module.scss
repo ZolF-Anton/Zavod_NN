@@ -1,0 +1,105 @@
+@import '../colors.module.scss';
+
+p {
+    font-size: 28px;
+    color: $Corp-Black;
+    margin-top: 0px;
+}
+
+label {
+    display: block;
+    position: absolute;
+    height: 18px;
+    padding: 0 8px;
+    background-color: #fff;
+    font-size: 12px;
+    margin-bottom: 0;
+    top: -9px;
+    left: 12px;
+}
+
+.contacts-input {
+    position: relative;
+    input {
+        padding: 18px 20px;
+        width: 85%;
+    }
+}
+
+.contacts__textarea {
+    textarea {
+        padding: 18px 20px;
+        width: 70%;
+        height: 82%;
+    }
+}
+.contacts__error {
+    display: block;
+    position: absolute;
+    color: $Ctr-Red;
+    height: 18px;
+    padding: 0 8px;
+    background-color: #fff;
+    font-size: 12px;
+    margin-bottom: 0;
+    top: 37%;
+    left: 45%;
+}
+
+.modal-window {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 2rem;
+
+    border-radius: 7px;
+    padding: 2rem;
+    background-color: $White;
+    margin-top: 33vh;
+    z-index: 10;
+}
+.activate {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    z-index: 10;
+    opacity: 1;
+    transition: 377ms;
+    pointer-events: all;
+}
+
+.modal-area {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: 477ms;
+}
+
+.contacts__triq {
+    grid-area: 2/2/3/3;
+}
+.contacts__form {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 1fr;
+    font-size: 12px;
+    column-gap: 1rem;
+}
+.input__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input__red {
+    border-color: $Ctr-Red;
+}

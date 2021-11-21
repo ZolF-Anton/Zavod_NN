@@ -1,11 +1,9 @@
 @import '../colors.module.scss';
 
-.price-descr {
+p {
     font-size: 28px;
     color: $Corp-Black;
     margin-top: 0px;
-    font-weight: 700;
-    text-align: left;
 }
 
 label {
@@ -56,8 +54,34 @@ label {
     border-radius: 7px;
     padding: 2rem;
     background-color: $White;
-
+    margin-top: 33vh;
     z-index: 10;
+}
+.activate {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    z-index: 10;
+    opacity: 1;
+    transition: 377ms;
+    pointer-events: all;
+}
+
+.modal-area {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: 477ms;
 }
 
 .contacts__triq {
@@ -70,9 +94,6 @@ label {
     font-size: 12px;
     column-gap: 1rem;
 }
-.contacts__policy {
-    margin-top: 0.3rem;
-}
 .input__wrap {
     display: flex;
     flex-direction: column;
@@ -81,21 +102,4 @@ label {
 
 .input__red {
     border-color: $Ctr-Red;
-}
-
-.btn-price {
-    //font-family: Montserrat;
-    font-weight: bold;
-    margin-top: 45px;
-    background-color: $Corp-Blue;
-    width: 331px;
-    height: 55px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: $Ctr-White;
-    &:disabled {
-        background-color: $Sec-Gray;
-        cursor: not-allowed;
-    }
 }

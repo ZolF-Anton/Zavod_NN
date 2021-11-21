@@ -1,0 +1,14 @@
+@import './colors.module.scss';
+
+h1 {
+    color: $Sec-Gray;
+    font-size: 54px;
+    text-align: center;
+    font-weight: 900;
+}
+
+p {
+    color: $Corp-Black;
+    text-align: center;
+    font-size: 26px;
+}

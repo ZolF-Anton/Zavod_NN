@@ -1,0 +1,23 @@
+@import '../colors.module.scss';
+.auto {
+    &-header {
+        font-size: 46px;
+        font-weight: bold;
+        color: $Corp-Black;
+        text-align: left;
+    }
+    &-wrap {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    &-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 218px;
+        height: 120px;
+        background-color: $Ctr-White;
+    }
+}

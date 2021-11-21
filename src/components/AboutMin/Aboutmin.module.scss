@@ -7,6 +7,7 @@
 
 .text-block {
     background-color: $White;
+    margin: 70px 0;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -20,4 +21,7 @@
 .text-chank {
     font-size: 18px;
     color: $Corp-Black;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
 }

@@ -17,7 +17,7 @@ p {
     margin-top: 45px;
 }
 
-button {
+.btn-price {
     //font-family: Montserrat;
     font-weight: bold;
     margin-top: 45px;
@@ -28,9 +28,8 @@ button {
     cursor: pointer;
     font-size: 18px;
     color: $Ctr-White;
-}
-
-button:disabled {
-    background-color: $Sec-Gray;
-    cursor: not-allowed;
+    &:disabled {
+        background-color: $Sec-Gray;
+        cursor: not-allowed;
+    }
 }

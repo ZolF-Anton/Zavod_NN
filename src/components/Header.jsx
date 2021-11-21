@@ -29,14 +29,16 @@ const Header = () => {
                 <div
                     style={{
                         // By using the same grid area for both, they are stacked on top of each other
-                        gridArea: '1/1/2/5',
-                        position: 'relative',
+                        //gridArea: '1/1/2/5',
+                        position: 'fixed',
+                        width: '100vw',
+                        background: 'rgba(255, 255, 255, 0.8)',
+                        zIndex: '20',
                         // This centers the other elements inside the hero component
                         //placeItems: 'start center',
-                        display: 'grid',
+                        //display: 'grid',
                     }}
                 >
-                    {/* Any content here will be toped/centered in the component */}
                     <Navbar />
                 </div>
                 <div

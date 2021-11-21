@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby';
 import {
     contactsInput,
     modalWindow,
+    modalArea,
+    activate,
     contacts__triq,
     contacts__form,
     input__wrap,
     contacts__textarea,
     contacts__error,
     input__red,
-    btnPrice,
-    contacts__policy,
-    priceDescr,
 } from './priceform.module.scss';
 
 const PriceForm = ({ active, setActive }) => {
@@ -105,12 +103,10 @@ const PriceForm = ({ active, setActive }) => {
     };
 
     return (
-        <section>
-            <div className={modalWindow}>
-                <p className={priceDescr}>
-                    Для получения детальной информации воспользуйтесь формой обратной связи
-                </p>
-                <form action='#' className={contacts__form} id='input__name'>
+        <modal className={active ? activate : modalArea} onClick={() => setActive(false)}>
+            <div className={modalWindow} onClick={(e) => e.stopPropagation()}>
+                <p>Для получения детальной информации воспользуйтесь формой обратной связи</p>
+                <form action="#" className={contacts__form} id="input__name">
                     <div className={input__wrap}>
                         <div className={contactsInput}>
                             <input
@@ -118,13 +114,13 @@ const PriceForm = ({ active, setActive }) => {
                                 value={name}
                                 onChange={(e) => nameHandler(e)}
                                 onBlur={(e) => blurHandler(e)}
-                                name='name'
-                                type='text'
+                                name="name"
+                                type="text"
                             />
                             {nameDirty && nameError && (
                                 <div className={contacts__error}>{nameError}</div>
                             )}
-                            <label htmlFor='name'>Имя Фамилия</label>
+                            <label htmlFor="name">Имя Фамилия</label>
                         </div>
                         <div className={contactsInput}>
                             <input
@@ -133,26 +129,26 @@ const PriceForm = ({ active, setActive }) => {
                                 onChange={(e) => phoneHandler(e)}
                                 onBlur={(e) => blurHandler(e)}
                                 onFocus={(e) => focusPhoneHandler(e)}
-                                name='phone'
-                                type='tel'
-                                maxLength='12'
-                                placeholder='+7 (9xx) xxx-xx-xx'
-                                pattern='7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}'
+                                name="phone"
+                                type="tel"
+                                maxLength="12"
+                                placeholder="+7 (9xx) xxx-xx-xx"
+                                pattern="7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
                             />
                             {phoneDirty && phoneError && (
                                 <div className={contacts__error}>{phoneError}</div>
                             )}
-                            <label htmlFor='name'>Телефон</label>
+                            <label htmlFor="name">Телефон</label>
                         </div>
-                        <div className={contactsInput} id='input__email'>
+                        <div className={contactsInput} id="input__email">
                             <input
                                 className={emailError && input__red}
                                 value={email}
                                 onChange={(e) => emailHandler(e)}
                                 onBlur={(e) => blurHandler(e)}
-                                name='email'
-                                type='text'
-                                placeholder='Email'
+                                name="email"
+                                type="text"
+                                placeholder="Email"
                             />
                             {emailDirty && emailError && (
                                 <div className={contacts__error}>{emailError}</div>
@@ -161,28 +157,28 @@ const PriceForm = ({ active, setActive }) => {
                         </div>
                     </div>
                     <div className={contacts__textarea}>
-                        <textarea name='text' id='text' placeholder='Ваш вопрос'></textarea>
+                        <textarea name="text" id="text" placeholder="Ваш вопрос"></textarea>
                         {/* <label htmlFor="text">Ваше сообщение</label> */}
                     </div>
                     <div className={contacts__triq}>
-                        <button disabled={!formValid} className={btnPrice} type='submit'>
+                        <button disabled={!formValid} type="submit">
                             ПОЛУЧИТЬ ПРАЙС
                         </button>
-                        <div className={contacts__policy}>
+                        <div className="contacts__policy">
                             <input
-                                type='checkbox'
+                                type="checkbox"
                                 checked={checkedFlag}
                                 onChange={() => checkedHandler()}
                             />
                             <span>
                                 Я согласен(а) c{' '}
-                                <Link to='/privacy'>политикой конфиденциальности</Link>
+                                <a href="/policy.html">политикой конфиденциальности</a>
                             </span>
                         </div>
                     </div>
                 </form>
             </div>
-        </section>
+        </modal>
     );
 };
 

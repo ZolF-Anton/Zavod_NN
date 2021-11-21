@@ -1,0 +1,56 @@
+.row {
+    display: flex;
+
+    flex-wrap: wrap;
+    margin-right: -15 px;
+    margin-left: -15 px;
+    line-height: 1.5rem;
+}
+.col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .ol {
+        padding-left: 40px;
+    }
+}
+.ol {
+    margin-bottom: 16px;
+    padding-left: 28px;
+}
+.li {
+    padding-left: 20px;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.h5-privacy {
+    margin-bottom: 24px;
+    display: block;
+    font-size: 20px;
+}
+.h4-privacy {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.descr {
+    margin-bottom: 24px;
+}

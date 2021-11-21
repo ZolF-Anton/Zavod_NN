@@ -1,3 +1,5 @@
+@import './colors.module.scss';
+
 .skills-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +23,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
+    color: $Ctr-White;
 }
 
 .skill-descr {
@@ -28,4 +31,5 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
+    color: $Ctr-Gray;
 }

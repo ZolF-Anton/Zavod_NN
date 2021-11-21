@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import {
     footerMain,
     footerItem,
@@ -27,32 +28,53 @@ function Footer() {
             <div className={footerMain}>
                 <div className={footerLogo}>
                     <StaticImage
-                        src="../../images/logo-s.svg"
-                        alt="logo first"
+                        src='../../images/logo-s.svg'
+                        alt='logo first'
                         width={160}
-                        layout="fixed"
+                        layout='fixed'
                     />
                     <StaticImage
-                        src="../../images/logo-s-t.svg"
-                        alt="logo first"
+                        src='../../images/logo-s-t.svg'
+                        alt='logo first'
                         width={110}
-                        layout="fixed"
+                        layout='fixed'
                     />
                 </div>
                 <div className={footerNav}>
                     <div className={footerTitle}>Разделы сайта</div>
-                    <div className={footerItem}>О компании</div>
-                    <div className={footerItem}>Услуги</div>
-                    <div className={footerItem}>Раскрытие информации</div>
-                    <div className={footerItem}>Абонентам</div>
-                    <div className={footerItem}>Наши объекты</div>
-                    <div className={footerItem}>Новости</div>
-                    <div className={footerItem}>Контакты</div>
+                    <div>
+                        <Link className={footerItem} exact to={'/'}>
+                            Главная
+                        </Link>
+                    </div>
+
+                    <div>
+                        <Link className={footerItem} to={'/catalog'}>
+                            Каталог
+                        </Link>
+                    </div>
+                    <div>
+                        <Link className={footerItem} to={'/contacts'}>
+                            Контакты
+                        </Link>
+                    </div>
+                    <div>
+                        <Link className={footerItem} to={'/about'}>
+                            О компании
+                        </Link>
+                    </div>
+                    <div>
+                        <Link className={footerItem} to={'/price'}>
+                            Прайс
+                        </Link>
+                    </div>
                 </div>
                 <div className={footerInfo}>
                     <div className={footerBlock}>
                         <div className={footerTitle}>Телефон:</div>
-                        <div className={footerPhone}>+7 (863) 303-30-44</div>
+                        <div className={footerPhone}>
+                            <a href='tel:+78633033044'>+7(863)303-30-44</a>
+                        </div>
                     </div>
                     <div className={footerBlock}>
                         <div className={footerTitle}>График работы:</div>
@@ -61,7 +83,9 @@ function Footer() {
                     </div>
                     <div className={footerBlock}>
                         <div className={footerTitle}>Email:</div>
-                        <div className={footerEmail}>DDobrota@mail.ru</div>
+                        <div className={footerEmail}>
+                            <a href='mailto:DDobrota@mail.ru'>DDobrota@mail.ru</a>
+                        </div>
                     </div>
                     <div className={footerBlock}>
                         <div className={footerTitle}>Адрес:</div>

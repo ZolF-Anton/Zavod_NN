@@ -4,6 +4,7 @@ import Header from '../components/Header';
 //import * as styles from './about.module.scss';
 import { Helmet } from 'react-helmet';
 import Call2action from '../components/Other/Call2action';
+import Aboutfull from '../components/AboutFull/Aboutfull';
 import PriceForm from '../components/Other/PriceForm';
 
 const AboutPage = () => {
@@ -14,6 +15,7 @@ const AboutPage = () => {
 
             <Header />
             <Call2action />
+            <Aboutfull />
             <PriceForm />
         </main>
     );

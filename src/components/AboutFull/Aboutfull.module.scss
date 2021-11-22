@@ -1,0 +1,67 @@
+@import '../colors.module.scss';
+
+.bg {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.about {
+    &-wrap {
+        display: flex;
+        background-color: aquamarine;
+        height: 75vh;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    &-box {
+        position: absolute;
+        z-index: 10;
+        width: 400px;
+        height: 200px;
+        left: 270px;
+        top: 450px;
+        background: $Corp-Blue;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
+            0px 8px 16px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    &-title {
+        margin-top: 1.7rem;
+        color: $Ctr-White;
+
+        z-index: 20;
+
+        top: 50px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 46px;
+    }
+    &-adress {
+        color: $Ctr-Gray;
+
+        z-index: 20;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 150%;
+        ::before {
+            content: '♥';
+            width: 15px;
+            height: 20px;
+            z-index: 20;
+            //content: url(../../images/icons/map-point.svg);
+        }
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}

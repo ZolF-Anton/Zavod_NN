@@ -46,22 +46,36 @@
 
         z-index: 20;
 
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
         line-height: 150%;
-        ::before {
-            content: '♥';
-            width: 15px;
-            height: 20px;
-            z-index: 20;
-            //content: url(../../images/icons/map-point.svg);
+        span {
+            color: $Ctr-Gray;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            margin-left: 0.5rem;
         }
     }
     &-grid {
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr 1fr;
+    }
+    &-tm {
+        color: brown;
+        &_img {
+            background-color: cyan;
+        }
+    }
+    &-descr {
+        color: $Corp-Black;
+        font-weight: 700;
+        font-style: 28px;
+        line-height: 50px;
+    }
+    &-ol {
+        color: $Corp-Black;
+        list-style-type: disc;
+        font-size: 18px;
     }
 }

@@ -6,17 +6,21 @@ import { Helmet } from 'react-helmet';
 import Call2action from '../components/Other/Call2action';
 import Aboutfull from '../components/AboutFull/Aboutfull';
 import PriceForm from '../components/Other/PriceForm';
+import Auto from '../components/Autos/Auto';
+import Footer from '../components/Footer/Footer';
 
 const AboutPage = () => {
     return (
         <main>
-            <Helmet title='About Page' defer={false} />
+            <Helmet title="About Page" defer={false} />
             <title>About Page</title>
 
             <Header />
             <Call2action />
             <Aboutfull />
             <PriceForm />
+            <Auto />
+            <Footer />
         </main>
     );
 };

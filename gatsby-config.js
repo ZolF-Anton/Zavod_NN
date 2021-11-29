@@ -2,7 +2,8 @@ module.exports = {
     siteMetadata: {
         siteUrl: 'https://zavod-kd.ru',
         title: 'zavod-kd',
-        description: 'hello desc',
+        description: 'gatsby page for ZavodKD',
+        author: 'Anton-ZolF, OstKost',
     },
     plugins: [
         {

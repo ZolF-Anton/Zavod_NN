@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { textBlock, title, textChank } from './Aboutmin.module.scss';
+import { textBlock, title, textChank } from './aboutmin.module.scss';
 
 function Aboutmin() {
     return (

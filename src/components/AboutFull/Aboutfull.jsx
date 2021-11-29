@@ -11,8 +11,7 @@ import {
     aboutDescr,
     aboutOl,
     aboutTm_img,
-} from './Aboutfull.module.scss';
-//import  '../../images/icons/map-point.svg';
+} from './aboutfull.module.scss';
 
 const Aboutfull = () => {
     return (
@@ -21,24 +20,24 @@ const Aboutfull = () => {
                 <div className={aboutBox}>
                     <div className={aboutTitle}>Завод КД и ТДГ</div>
                     <div className={aboutAdress}>
-                        <StaticImage alt="map-point" src="../../images/icons/map-point.svg" />
+                        <StaticImage alt='map-point' src='../../images/icons/map-point.svg' />
                         <span>г. Зерноград, ул. Ленина, 16Е</span>
                     </div>
                 </div>
                 <StaticImage
-                    alt=""
+                    alt=''
                     style={{ position: 'absolute' }}
-                    src="../../images/Aboutfull.png"
+                    src='../../images/Aboutfull.png'
                     className={bg}
                 />
             </div>
             <div className={aboutGrid}>
                 <div className={aboutTm_img}>
                     <StaticImage
-                        src="../../images/logo-s.svg"
-                        alt="logo first"
+                        src='../../images/logo-s.svg'
+                        alt='logo first'
                         width={310}
-                        layout="constrained"
+                        layout='constrained'
                     />
                 </div>
                 <div className={aboutTm}>
@@ -57,10 +56,10 @@ const Aboutfull = () => {
                 </div>
                 <div className={aboutTm_img}>
                     <StaticImage
-                        src="../../images/logo-s-t.svg"
-                        alt="logo first"
+                        src='../../images/logo-s-t.svg'
+                        alt='logo first'
                         width={130}
-                        layout="constrained"
+                        layout='constrained'
                     />
                 </div>
                 <div className={aboutTm}>

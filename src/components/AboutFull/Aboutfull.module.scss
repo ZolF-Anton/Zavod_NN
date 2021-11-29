@@ -32,9 +32,7 @@
     &-title {
         margin-top: 1.7rem;
         color: $Ctr-White;
-
         z-index: 20;
-
         top: 50px;
         font-family: Roboto;
         font-style: normal;
@@ -58,19 +56,22 @@
     }
     &-grid {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: minmax(150px, 350px) 2fr;
         grid-template-rows: 1fr 1fr;
+        padding: 5rem 10rem 0;
     }
     &-tm {
         color: brown;
         &_img {
-            background-color: cyan;
+            padding-right: 2rem;
+            justify-self: center;
+            align-self: center;
         }
     }
     &-descr {
         color: $Corp-Black;
         font-weight: 700;
-        font-style: 28px;
+        font-size: 28px;
         line-height: 50px;
     }
     &-ol {

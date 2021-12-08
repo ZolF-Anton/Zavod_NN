@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Preloader from './preloader';
 import Search from './Search';
+import Partlist from './Partlist';
 
 const CatalogList = () => {
     const [parts, setParts] = useState([]);
@@ -31,11 +32,11 @@ const CatalogList = () => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.Response === 'True') {
-                    setMovies(data.records);
+                    setParts(data.records);
                     setError(false);
                     setLoad(false);
                 } else if (!data.records && data.Error === 'Parts not found!') {
-                    setMovies([]);
+                    setParts([]);
                     setError(true);
                     setLoad(false);
                 }
@@ -44,8 +45,8 @@ const CatalogList = () => {
 
     return (
         <div>
-            <Search searchPartss={searchParts} />
-            {load ? <Preloader /> : <Movielist movies={parts} errorLoad={error} />}
+            <Search searchParts={searchParts} />
+            {load ? <Preloader /> : <Partlist parts={parts} errorLoad={error} />}
         </div>
     );
 };

@@ -4,16 +4,16 @@ import { useState } from 'react';
 function Search(props) {
     const [search, setSearch] = useState('');
     const [type, setType] = useState('all');
-    let handleKey = (event) => {
-        if (event.key === 'Enter') {
-            props.searchMovies(search, type);
-        }
-    };
+    // let handleKey = (event) => {
+    //     if (event.key === 'Enter') {
+    //         props.searchParts(partName);
+    //     }
+    // };
 
-    let handleFilter = (event) => {
-        setType(() => event.target.dataset.type);
-        props.searchMovies(search, event.target.dataset.type);
-    };
+    // let handleFilter = (event) => {
+    //     setType(() => event.target.dataset.type);
+    //     props.searchParts(search, event.target.dataset.type);
+    // };
 
     return (
         <>
@@ -28,7 +28,7 @@ function Search(props) {
                     onKeyDown={handleKey}
                 />
                 <button
-                    onClick={() => props.searchMovies(search, type)}
+                    onClick={() => props.searchParts(partName)}
                     className='waves-effect waves-light btn btn_search'
                 >
                     <i className='material-icons left'>search</i>search

@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Preloader from './preloader';
-import Search from './Search';
+import Select from './Select';
 import Partlist from './Partlist';
 
 const CatalogList = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
+
     useEffect(() => {
         setError(true);
         setLoad(true);
-        fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/mufflers?api_key=key9UItv1zOIxkpng`)
+        fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/muffler?api_key=key9UItv1zOIxkpng`)
             .then((response) => response.json())
             .then((data) => {
                 setParts(data.records);
@@ -26,16 +27,16 @@ const CatalogList = () => {
             });
     }, []);
 
-    let searchParts = (partName) => {
+    let selectParts = (partName) => {
         setLoad(true);
         fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${partName}?api_key=key9UItv1zOIxkpng`)
             .then((response) => response.json())
             .then((data) => {
-                if (data.Response === 'True') {
+                if (data.records) {
                     setParts(data.records);
                     setError(false);
                     setLoad(false);
-                } else if (!data.records && data.Error === 'Parts not found!') {
+                } else if (!data.records && data.error === 'Parts not found!') {
                     setParts([]);
                     setError(true);
                     setLoad(false);
@@ -45,7 +46,7 @@ const CatalogList = () => {
 
     return (
         <div>
-            <Search searchParts={searchParts} />
+            <Select selectParts={selectParts} />
             {load ? <Preloader /> : <Partlist parts={parts} errorLoad={error} />}
         </div>
     );

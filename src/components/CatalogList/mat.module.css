@@ -1,0 +1,68 @@
+/* custom css */
+
+.parts_item {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 0 6rem;
+}
+
+.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    transition: box-shadow 0.25s;
+    border-radius: 2px;
+}
+
+.card-panel,
+.card,
+.btn {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
+        0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.card_content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    min-height: 99px;
+}
+.card_title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 20px;
+}
+
+.card_red {
+    background-color: #a62028;
+}
+.card_blue {
+    background-color: #3576ad;
+}
+.card_green {
+    background-color: #1fa492;
+}
+.card_disabled {
+    opacity: 0.5;
+}
+
+.tab__wrap {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.tab__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6f6fc;
+    width: 265px;
+    height: 59px;
+    cursor: pointer;
+}
+.tab__btn:hover {
+    background-color: #ade9ff;
+}

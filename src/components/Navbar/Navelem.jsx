@@ -4,7 +4,6 @@ import { navItem, navLinks, imgActive, imgPass, active, navPhones } from './navb
 
 function Navelem(props) {
     const isActive = ({ isCurrent }) => {
-        console.log(isCurrent);
         return isCurrent ? setFlag(true) : setFlag(false);
     };
     const [flag, setFlag] = useState(false);
@@ -13,12 +12,7 @@ function Navelem(props) {
         <li className={navItem}>
             <img className={flag ? imgActive : imgPass} src={props.icon} alt="" />
             {/* getProps={isActive} */}
-            <Link
-                className={flag ? active : navLinks}
-                getProps={isActive}
-                //activeClassName={active}
-                to={props.path}
-            >
+            <Link className={flag ? active : navLinks} getProps={isActive} to={props.path}>
                 {props.name}
             </Link>
         </li>

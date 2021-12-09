@@ -15,6 +15,7 @@
         "clean": "gatsby clean"
     },
     "dependencies": {
+        "classnames": "^2.3.1",
         "gatsby": "^3.13.1",
         "gatsby-plugin-google-analytics": "^3.14.0",
         "gatsby-plugin-image": "^1.14.0",

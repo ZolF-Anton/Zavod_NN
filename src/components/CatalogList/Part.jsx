@@ -18,7 +18,7 @@ function Part(props) {
         <>
             <div id={id} className={cn(card)}>
                 <div>
-                    {Images.large === 'N/A' ? (
+                    {!Images[0].thumbnails.large.url ? (
                         <img
                             alt={Name}
                             src="https://via.placeholder.com/150x300.png?text=Poster+was+ninjaed+by+wild+Gremlins"

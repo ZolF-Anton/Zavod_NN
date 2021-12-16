@@ -11,17 +11,20 @@ import Footer from '../components/Footer/Footer';
 
 const AboutPage = () => {
     return (
-        <main>
-            <Helmet title="About Page" defer={false} />
-            <title>About Page</title>
+        <>
+            <Helmet title="Catalog Page" defer={false}>
+                <title>About Page</title>
+            </Helmet>
 
-            <Header />
-            <Call2action />
-            <Aboutfull />
-            <PriceForm />
-            <Auto />
+            <main>
+                <Header />
+                <Call2action />
+                <Aboutfull />
+                <PriceForm />
+                <Auto />
+            </main>
             <Footer />
-        </main>
+        </>
     );
 };
 

@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react';
 import Preloader from './preloader';
 import Select from './Select';
 import Partlist from './Partlist';
+import Schema from './Scheme';
 
 const CatalogList = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
+    const [btnName, setBtnName] = useState('muffler');
 
     useEffect(() => {
         setError(true);
@@ -28,6 +30,7 @@ const CatalogList = () => {
     }, []);
 
     let selectParts = (partName) => {
+        setBtnName(partName);
         setLoad(true);
         fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${partName}?api_key=key9UItv1zOIxkpng`)
             .then((response) => response.json())
@@ -46,7 +49,8 @@ const CatalogList = () => {
 
     return (
         <div>
-            <Select selectParts={selectParts} />
+            <Select selectParts={selectParts} btnName={btnName} />
+            <Schema selectParts={selectParts} btnName={btnName} />
             {load ? <Preloader /> : <Partlist parts={parts} errorLoad={error} />}
         </div>
     );

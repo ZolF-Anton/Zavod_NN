@@ -8,14 +8,17 @@ import Footer from '../components/Footer/Footer';
 
 const CatalogPage = () => {
     return (
-        <main>
-            <Helmet title="Catalog Page" defer={false} />
-            <title>Catalog Page</title>
+        <>
+            <Helmet title="Catalog Page" defer={false}>
+                <title>Catalog Page</title>
+            </Helmet>
             <Navbar />
-            <MainBlockMin />
-            <CatalogList />
+            <main>
+                <MainBlockMin />
+                <CatalogList />
+            </main>
             <Footer />
-        </main>
+        </>
     );
 };
 

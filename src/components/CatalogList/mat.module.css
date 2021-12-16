@@ -66,3 +66,46 @@
 .tab__btn:hover {
     background-color: #ade9ff;
 }
+.tab__btn__active {
+    background-color: #368fad;
+}
+
+.scheme__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 20rem;
+}
+.scheme__img {
+    width: 238px;
+    transition: 450ms;
+}
+.scheme__img:hover {
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5))
+        drop-shadow(0px 0px 15px rgba(50, 10, 50, 0.9));
+}
+.scheme__img_active {
+    filter: drop-shadow(0px 0px 15px rgba(29, 34, 63, 0.5))
+        drop-shadow(0px 0px 15px rgba(15, 4, 15, 0.9));
+    transform: scale(1.11) rotate(7deg) translate(-15px, -33px) !important;
+}
+
+.scheme__img_resonator {
+    width: 480px;
+    transform: translate(-71px, -42px);
+}
+.scheme__img_muffler {
+    transform: translate(-115px, -121px);
+}
+
+/***  scheme__part **/
+
+.scheme__part {
+    z-index: 5;
+}
+.scheme__part:first-child {
+    z-index: 10;
+}
+.scheme__part:last-child {
+    z-index: 1;
+}

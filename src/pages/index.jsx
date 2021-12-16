@@ -8,10 +8,10 @@ import Footer from '../components/Footer/Footer';
 const IndexPage = () => {
     return (
         <>
+            <Helmet title="Zavod Home" defer={false}>
+                <title>Home Page</title>
+            </Helmet>
             <main>
-                <Helmet title="Zavod Home" defer={false}>
-                    <title>Home Page</title>
-                </Helmet>
                 <Header />
                 <Aboutmin />
             </main>

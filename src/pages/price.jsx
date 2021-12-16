@@ -9,16 +9,19 @@ import Footer from '../components/Footer/Footer';
 
 const PricePage = () => {
     return (
-        <main>
-            <Helmet title='Price Page' defer={false} />
-            <title>Price Page</title>
+        <>
+            <Helmet title="Price Page" defer={false}>
+                <title>About Page</title>
+            </Helmet>
             <Navbar />
-            <MainBlockMin />
-            <Auto />
-            <PriceForm />
-            <AutoPopular />
+            <main>
+                <MainBlockMin />
+                <Auto />
+                <PriceForm />
+                <AutoPopular />
+            </main>
             <Footer />
-        </main>
+        </>
     );
 };
 

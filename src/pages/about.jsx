@@ -7,6 +7,7 @@ import Call2action from '../components/Other/Call2action';
 import Aboutfull from '../components/AboutFull/Aboutfull';
 import PriceForm from '../components/Other/PriceForm';
 import Auto from '../components/Autos/Auto';
+import Slider from '../components/Slider/Slider';
 import Footer from '../components/Footer/Footer';
 
 const AboutPage = () => {
@@ -20,6 +21,7 @@ const AboutPage = () => {
                 <Header />
                 <Call2action />
                 <Aboutfull />
+                <Slider />
                 <PriceForm />
                 <Auto />
             </main>

@@ -16,9 +16,9 @@ import logo from '/src/images/logo-s.svg';
 import logoT from '/src/images/logo-s-t.svg';
 import home from '../../images/icons/nav/home.svg';
 import list1 from '../../images/icons/nav/list1.svg';
-import contacts from '../../images/icons/nav/contacts.svg';
 import about from '../../images/icons/nav/about.svg';
 import price from '../../images/icons/nav/price.svg';
+// import contacts from '../../images/icons/nav/contacts.svg';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
@@ -35,9 +35,9 @@ const Navbar = () => {
                 <ul className={click ? navMenuActive : navMenu}>
                     <Navelem path={'/'} name={'ГЛАВНАЯ'} icon={home} />
                     <Navelem path={'/catalog'} name="КАТАЛОГ" icon={list1} />
-                    <Navelem path={'/contacts'} name="КОНТАКТЫ" icon={contacts} />
-                    <Navelem path={'/about'} name="О НАС" icon={about} />
+                    {/* <Navelem path={'/contacts'} name="КОНТАКТЫ" icon={contacts} /> */}
                     <Navelem path={'/price'} name={'ПРАЙС'} icon={price} />
+                    <Navelem path={'/about'} name="О НАС" icon={about} />
                 </ul>
                 <NavPhone />
                 <button className={navIcon} onClick={handleClick}>

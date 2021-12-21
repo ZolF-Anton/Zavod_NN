@@ -71,6 +71,19 @@
     height: 59px;
     cursor: pointer;
 }
+
+.tab__btn:nth-child(2) {
+    order: 2;
+}
+.tab__btn:nth-child(3) {
+    order: 3;
+}
+.tab__btn:nth-child(4) {
+    order: 1;
+}
+.tab__btn:nth-child(5) {
+    order: 4;
+}
 .tab__btn:hover {
     background-color: #ade9ff;
 }

@@ -1,0 +1,21 @@
+@import '../colors.module.scss';
+
+.slider__container {
+    width: 100%;
+    position: relative;
+}
+
+.catalog__slider {
+    scroll-snap-type: inline mandatory;
+    display: flex;
+    overflow: scroll;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 50px;
+}
+
+.catalog__slider-item {
+    width: 25%;
+    scroll-snap-align: start;
+}

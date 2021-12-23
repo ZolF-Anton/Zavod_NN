@@ -80,3 +80,60 @@ function initApparatusSlider() {
     render();
     startSlider();
 }
+
+function name(params) {
+    if (up) {
+        left = sliderScrolled < maxScroll && sliderScrolled + itemWidth;
+    } else if (sliderScrolled >= maxScroll) {
+        left = 0;
+        slider.current.scrollTo({
+            left,
+            behavior: 'instant',
+        });
+    } else {
+        left = sliderScrolled <= 0 ? maxScroll : sliderScrolled - itemWidth;
+        left = sliderScrolled <= 0 ? maxScroll : sliderScrolled - itemWidth;
+    }
+    slider.current.scrollTo({
+        left,
+        behavior: 'smooth',
+    });
+
+    if (up) {
+        if (sliderScrolled >= maxScroll) {
+            left = 0;
+            slider.current.scrollTo({
+                left,
+                behavior: 'instant',
+            });
+        }
+        left = sliderScrolled < maxScroll && sliderScrolled + itemWidth;
+    } else {
+        if (sliderScrolled <= 0) {
+            left = maxScroll;
+        } else {
+            left = sliderScrolled - itemWidth;
+        }
+    }
+    slider.current.scrollTo({
+        left,
+        behavior: 'instant',
+    });
+}
+
+if (up) {
+    left = sliderScrolled < maxScroll && sliderScrolled + itemWidth;
+} else if (sliderScrolled >= maxScroll) {
+    left = 0;
+    slider.current.scrollTo({
+        left,
+        behavior: 'instant',
+    });
+} else {
+    left = sliderScrolled <= 0 ? maxScroll : sliderScrolled - itemWidth;
+    left = sliderScrolled <= 0 ? maxScroll : sliderScrolled - itemWidth;
+}
+slider.current.scrollTo({
+    left,
+    behavior: 'smooth',
+});

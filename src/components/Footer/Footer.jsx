@@ -28,16 +28,16 @@ function Footer() {
             <div className={footerMain}>
                 <div className={footerLogo}>
                     <StaticImage
-                        src='../../images/logo-s.svg'
-                        alt='logo first'
+                        src="../../images/logo-s.svg"
+                        alt="logo first"
                         width={160}
-                        layout='fixed'
+                        layout="constrained"
                     />
                     <StaticImage
-                        src='../../images/logo-s-t.svg'
-                        alt='logo first'
+                        src="../../images/logo-s-t.svg"
+                        alt="logo first"
                         width={110}
-                        layout='fixed'
+                        layout="constrained"
                     />
                 </div>
                 <div className={footerNav}>
@@ -73,7 +73,7 @@ function Footer() {
                     <div className={footerBlock}>
                         <div className={footerTitle}>Телефон:</div>
                         <div className={footerPhone}>
-                            <a href='tel:+78633033044'>+7(863)303-30-44</a>
+                            <a href="tel:+78633033044">+7(863)303-30-44</a>
                         </div>
                     </div>
                     <div className={footerBlock}>
@@ -84,7 +84,7 @@ function Footer() {
                     <div className={footerBlock}>
                         <div className={footerTitle}>Email:</div>
                         <div className={footerEmail}>
-                            <a href='mailto:DDobrota@mail.ru'>DDobrota@mail.ru</a>
+                            <a href="mailto:DDobrota@mail.ru">DDobrota@mail.ru</a>
                         </div>
                     </div>
                     <div className={footerBlock}>

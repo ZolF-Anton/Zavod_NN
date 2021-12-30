@@ -45,13 +45,26 @@
     background: rgba(255, 255, 255, 0.85);
     border-radius: 50%;
 }
+@media screen and (max-width: 1280px) {
+    .title {
+        padding: 9rem 0 0 5rem;
+    }
+    .kalimagi {
+        padding-top: 12rem;
+    }
+}
+@media screen and (max-width: 710px) {
+    .subtitle {
+        min-height: 180px;
+    }
+}
 
 @media screen and (max-width: 576px) {
     .title {
         max-width: 500px;
         font-size: 40px;
         line-height: 110%;
-        padding: 7rem 0 0 5rem;
+        padding: 9rem 0 0 5rem;
     }
     .kalimagi {
         padding-top: 10rem;
@@ -63,6 +76,29 @@
             width: 40px;
         }
     }
+    .subtitle {
+        max-width: 612px;
+        min-height: 200px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .title {
+        max-width: 500px;
+        font-size: 40px;
+        line-height: 110%;
+        padding: 12rem 0 0 5rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    .title {
+        max-width: 400px;
+        font-size: 32px;
+        line-height: 110%;
+        padding: 10rem 0 0 5rem;
+    }
+    .kalimagi {
+        display: none;
+    }
 }
 @media screen and (max-width: 400px) {
     .title {
@@ -73,5 +109,8 @@
     }
     .kalimagi {
         display: none;
+    }
+    .subtitle {
+        min-height: 190px;
     }
 }

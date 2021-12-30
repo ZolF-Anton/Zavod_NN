@@ -33,3 +33,18 @@
     font-size: 14px;
     color: $Ctr-Gray;
 }
+@media screen and (max-width: 710px) {
+    .skills-wrap {
+        padding: 0 4rem;
+        gap: 1rem;
+        margin-top: 0.4rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills-wrap {
+        padding: 0 5rem;
+        gap: 1rem;
+        margin-top: 0.3rem;
+    }
+}

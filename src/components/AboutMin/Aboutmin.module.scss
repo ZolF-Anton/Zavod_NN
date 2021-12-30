@@ -25,3 +25,9 @@
     margin: 0;
     text-align: left;
 }
+
+@media screen and (max-width: 630px) {
+    .text-block {
+        margin: -5px 0;
+    }
+}

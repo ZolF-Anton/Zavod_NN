@@ -12,13 +12,13 @@ function Aboutmin() {
                     // You can set a maximum height for the image, if you wish.
                     // maxHeight: 600,
                 }}
-                layout='fullWidth'
+                layout="fullWidth"
                 // You can optionally force an aspect ratio for the generated image
                 aspectRatio={3 / 1}
                 // This is a presentational image, so the alt should be an empty string
-                alt=''
+                alt=""
                 // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
-                src='../../images/suppressor.png'
+                src="../../images/suppressor.png"
                 formats={['auto', 'webp', 'avif']}
             />
             <div

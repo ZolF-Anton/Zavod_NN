@@ -1,1 +1,7 @@
 @import '../colors.module.scss';
+
+@media screen and (max-width: 960px) {
+    .cataloglist__wrap {
+        display: flex;
+    }
+}

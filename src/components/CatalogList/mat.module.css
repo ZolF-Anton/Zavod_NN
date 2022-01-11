@@ -130,3 +130,19 @@
 .scheme__part:last-child {
     z-index: 1;
 }
+
+@media screen and (max-width: 960px) {
+    .tab__wrap {
+        flex-direction: column;
+    }
+    .scheme__wrap {
+        flex-direction: column;
+    }
+    .scheme__img {
+        width: 170px;
+    }
+    .scheme__img_resonator {
+        width: 285px;
+        transform: translate(0px, 0px);
+    }
+}

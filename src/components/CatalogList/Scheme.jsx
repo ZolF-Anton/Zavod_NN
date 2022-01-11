@@ -18,43 +18,43 @@ const Schema = (props) => {
         selectParts(event.target.dataset.type);
     };
     return (
-        <div>
+        <>
             <div className={scheme__wrap}>
                 <div className={cn(scheme__part)}>
                     <img
-                        data-type="collector"
+                        data-type='collector'
                         className={cn(scheme__img, {
                             [scheme__img_active]: btnName === 'collector',
                         })}
                         src={collector}
-                        alt="collector"
+                        alt='collector'
                         onClick={handleFilter}
                     />
                 </div>
                 <div className={cn(scheme__part)}>
                     <img
-                        data-type="resonator"
+                        data-type='resonator'
                         className={cn(scheme__img, scheme__img_resonator, {
                             [scheme__img_active]: btnName === 'resonator',
                         })}
                         src={resonator}
-                        alt="resonator"
+                        alt='resonator'
                         onClick={handleFilter}
                     />
                 </div>
                 <div className={cn(scheme__part)}>
                     <img
-                        data-type="muffler"
+                        data-type='muffler'
                         className={cn(scheme__img, scheme__img_muffler, {
                             [scheme__img_active]: btnName === 'muffler',
                         })}
                         src={muffler}
-                        alt="muffler"
+                        alt='muffler'
                         onClick={handleFilter}
                     />
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

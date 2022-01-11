@@ -4,6 +4,7 @@ import Preloader from './preloader';
 import Select from './Select';
 import Partlist from './Partlist';
 import Schema from './Scheme';
+import { cataloglist__wrap } from './cataloglist.module.scss';
 
 const CatalogList = () => {
     const [parts, setParts] = useState([]);
@@ -49,8 +50,10 @@ const CatalogList = () => {
 
     return (
         <div>
-            <Select selectParts={selectParts} btnName={btnName} />
-            <Schema selectParts={selectParts} btnName={btnName} />
+            <div className={cataloglist__wrap}>
+                <Select selectParts={selectParts} btnName={btnName} />
+                <Schema selectParts={selectParts} btnName={btnName} />
+            </div>
             {load ? <Preloader /> : <Partlist parts={parts} errorLoad={error} />}
         </div>
     );

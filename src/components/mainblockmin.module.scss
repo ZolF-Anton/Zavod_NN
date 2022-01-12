@@ -12,3 +12,43 @@ p {
     text-align: center;
     font-size: 26px;
 }
+
+////////////*********MEDIA**********/////////
+
+@media screen and (max-width: 920px) {
+    .main_block_min__title {
+        font-size: 40px;
+
+        margin-bottom: 25px;
+    }
+
+    .main_block_min__subtitle {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .main_block_min {
+        padding: 60px 5rem;
+    }
+    .main_block_min__title {
+        font-size: 40px;
+    }
+
+    .main_block_min__subtitle {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .main_block_min {
+        padding: 60px 3rem;
+    }
+    .main_block_min__title {
+        color: $Sec-Gray;
+        font-size: 30px;
+    }
+
+    .main_block_min__subtitle {
+        font-size: 13px;
+    }
+}

@@ -147,6 +147,9 @@
         width: 285px;
         transform: translate(0px, 0px);
     }
+    .scheme__img_muffler {
+        transform: translate(-35px, -17px);
+    }
 }
 
 @media screen and (max-width: 600px) {

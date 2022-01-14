@@ -21,3 +21,18 @@
         background-color: $Ctr-White;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .auto-wrap {
+        justify-content: center;
+    }
+    .auto-header {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .auto-header {
+        font-size: 37px;
+    }
+}

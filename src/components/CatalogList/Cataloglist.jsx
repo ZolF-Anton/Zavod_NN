@@ -10,12 +10,12 @@ const CatalogList = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
-    const [btnName, setBtnName] = useState('muffler');
+    const [btnName, setBtnName] = useState('catalyst');
 
     useEffect(() => {
         setError(true);
         setLoad(true);
-        fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/muffler?api_key=key9UItv1zOIxkpng`)
+        fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${btnName}?api_key=key9UItv1zOIxkpng`)
             .then((response) => response.json())
             .then((data) => {
                 setParts(data.records);

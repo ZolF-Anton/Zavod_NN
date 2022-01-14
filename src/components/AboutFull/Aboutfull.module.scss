@@ -59,6 +59,8 @@
         grid-template-columns: minmax(150px, 350px) 2fr;
         grid-template-rows: 1fr 1fr;
         padding: 5rem 10rem 0;
+        row-gap: 2rem;
+        column-gap: 0.5rem;
     }
     &-tm {
         color: brown;
@@ -78,5 +80,36 @@
         color: $Corp-Black;
         list-style-type: disc;
         font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about {
+        &-grid {
+            grid-template-rows: 0.5fr 1fr 0.5fr 1fr;
+        }
+        &-box {
+            left: calc(50vw - 200px);
+            background: crimson;
+        }
+        &-tm {
+            grid-column: 1/3;
+            &_img {
+                grid-column: 1/3;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .about {
+        &-box {
+            width: 100%;
+            left: 0;
+            background: violet;
+        }
+        &-grid {
+            padding: 3rem 2rem 0;
+        }
     }
 }

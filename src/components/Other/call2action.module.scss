@@ -29,3 +29,15 @@ p {
         cursor: not-allowed;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .btn-price {
+        width: 265px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 20px;
+    }
+}

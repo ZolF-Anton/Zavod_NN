@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { catalog__slider } from './slider.module.scss';
+import { catalog__slider, catalog__sliderItem } from './slider.module.scss';
 
 const SliderImg = (props) => {
     const { setImgCount, slider } = props;
@@ -17,7 +17,7 @@ const SliderImg = (props) => {
                             base
                             relativePath
                             childImageSharp {
-                                gatsbyImageData(quality: 50, width: 500, layout: FIXED)
+                                gatsbyImageData(quality: 70, layout: FIXED, width: 700)
                             }
                         }
                     }
@@ -29,13 +29,13 @@ const SliderImg = (props) => {
     useEffect(() => {
         setImgCount(data.allFile.edges.length);
         console.log(slider.current);
-    }, []);
+    }, [data.allFile.edges.length]);
 
     return (
         <ul className={catalog__slider} ref={slider}>
             {data.allFile.edges.map((e) => {
                 return (
-                    <li key={e.node.id}>
+                    <li className={catalog__sliderItem} key={e.node.id}>
                         <GatsbyImage
                             image={e.node.childImageSharp.gatsbyImageData}
                             alt={e.node.base}

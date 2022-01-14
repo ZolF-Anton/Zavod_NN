@@ -18,3 +18,12 @@
         height: 300px;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .popular-header {
+        text-align: center;
+    }
+    .popular-wrap {
+        justify-content: center;
+    }
+}

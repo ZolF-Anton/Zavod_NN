@@ -7,6 +7,7 @@ import {
     scheme__wrap,
     scheme__part,
     scheme__img,
+    scheme__img_collector,
     scheme__img_resonator,
     scheme__img_muffler,
     scheme__img_active,
@@ -23,7 +24,7 @@ const Schema = (props) => {
                 <div className={cn(scheme__part)}>
                     <img
                         data-type='collector'
-                        className={cn(scheme__img, {
+                        className={cn(scheme__img, scheme__img_collector, {
                             [scheme__img_active]: btnName === 'collector',
                         })}
                         src={collector}

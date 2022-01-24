@@ -10,22 +10,7 @@ const Slider = () => {
     const [imgCount, setImgCount] = useState(0);
     const slider = useRef(null);
 
-    const nextImg = () => {
-        if (currentIndex < imgCount - 1) {
-            setCurrentIndex((prevState) => prevState + 1);
-            console.log(currentIndex);
-        }
-    };
-
-    const prevImg = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex((prevState) => prevState - 1);
-            console.log(currentIndex);
-        }
-    };
-
     const nextSlide = (up = true) => {
-        console.log('nextSlide');
         const slides = slider.current.childNodes;
         const sliderWidth = slider.current.offsetWidth;
         const sliderFullWidth = slider.current.scrollWidth;
@@ -33,7 +18,7 @@ const Slider = () => {
         const itemWidth = sliderFullWidth / slides.length;
         const maxItems = Math.round(sliderWidth / itemWidth);
         const maxScroll = (slides.length - maxItems) * itemWidth;
-        console.log(sliderScrolled);
+
         let left = 0;
         if (up) {
             if (sliderScrolled >= maxScroll) {

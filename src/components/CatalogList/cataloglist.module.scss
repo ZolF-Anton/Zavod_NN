@@ -1,5 +1,10 @@
 @import '../colors.module.scss';
 
+.cataloglist__wrap__mainpage {
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+
 @media screen and (max-width: 960px) {
     .cataloglist__wrap {
         display: flex;

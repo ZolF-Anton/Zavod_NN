@@ -24,6 +24,11 @@ p {
     cursor: pointer;
     font-size: 18px;
     color: $Ctr-White;
+    a {
+        text-decoration: none;
+        color: $Ctr-White;
+    }
+
     &:disabled {
         background-color: $Sec-Gray;
         cursor: not-allowed;

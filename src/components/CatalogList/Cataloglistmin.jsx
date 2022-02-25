@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import Preloader from './preloader';
-import Select from './Select';
-import Partlist from './Partlist';
-import Schema from './Scheme';
-import { cataloglist__wrap } from './cataloglist.module.scss';
 
-const CatalogList = () => {
+import Select from './Selectmin';
+import Partlist from './Partlist';
+import Schema from './Schememin';
+import cn from 'classnames';
+import { cataloglist__wrap, cataloglist__wrap__mainpage } from './cataloglist.module.scss';
+
+const CatalogListMin = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
@@ -15,7 +16,6 @@ const CatalogList = () => {
     useEffect(() => {
         setError(true);
         setLoad(true);
-
         fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${btnName}?api_key=key9UItv1zOIxkpng`)
             .then((response) => response.json())
             .then((data) => {
@@ -29,7 +29,7 @@ const CatalogList = () => {
                 setError(true);
                 setLoad(true);
             });
-    }, []);
+    }, [btnName]);
 
     let selectParts = (partName) => {
         setBtnName(partName);
@@ -51,13 +51,12 @@ const CatalogList = () => {
 
     return (
         <div>
-            <div className={cataloglist__wrap}>
+            <div className={cn(cataloglist__wrap, cataloglist__wrap__mainpage)}>
                 <Select selectParts={selectParts} btnName={btnName} />
                 <Schema selectParts={selectParts} btnName={btnName} />
             </div>
-            {load ? <Preloader /> : <Partlist parts={parts} errorLoad={error} />}
         </div>
     );
 };
 
-export default CatalogList;
+export default CatalogListMin;

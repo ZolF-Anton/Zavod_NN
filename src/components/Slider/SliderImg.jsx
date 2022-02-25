@@ -17,7 +17,12 @@ const SliderImg = (props) => {
                             base
                             relativePath
                             childImageSharp {
-                                gatsbyImageData(quality: 70, layout: FIXED, width: 700)
+                                gatsbyImageData(
+                                    quality: 70
+                                    layout: CONSTRAINED
+
+                                    transformOptions: { cropFocus: CENTER, fit: COVER }
+                                )
                             }
                         }
                     }

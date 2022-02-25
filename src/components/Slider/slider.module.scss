@@ -12,11 +12,11 @@
 
 .catalog__slider {
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
     list-style: none;
     scrollbar-width: none;
 
-    scroll-snap-type: inline mandatory;
+    scroll-snap-type: x mandatory;
 }
 
 .catalog__slider::-webkit-scrollbar {
@@ -24,26 +24,45 @@
 }
 
 .catalog__slider-item {
-    width: 250px;
+    // width: 100%;
+    min-width: 65vw;
+    scroll-snap-align: start;
 }
-// .catalog__slider-item > * {
-//     // width: 100%;
-//     // flex-shrink: 0;
-//     // flex-grow: 1;
-// }
 
 .catalog__slider-control {
-    width: 120px;
-    height: 120px;
-    background-color: red;
-    font-size: 70px;
+    width: 70px;
+    height: 70px;
+    background-color: $Corp-Blue;
+    font-size: 25px;
     position: absolute;
     z-index: 10;
     right: 0;
-    bottom: 27%;
+    bottom: 50%;
+    transform: translateY(45px);
+    color: $White;
+    border: none;
 }
 
 .catalog__slider-control:first-child {
     left: 0;
-    background-color: cornflowerblue;
+}
+
+@media (pointer: coarse) {
+    .catalog__slider-control {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .catalog__slider-item {
+        min-width: 80vw;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .catalog__slider-item {
+        min-width: 50vw;
+    }
+    .slider__container {
+        width: 50vw;
+    }
 }

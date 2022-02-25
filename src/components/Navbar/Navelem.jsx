@@ -11,7 +11,6 @@ function Navelem(props) {
     return (
         <li className={navItem}>
             <img className={flag ? imgActive : imgPass} src={props.icon} alt="" />
-            {/* getProps={isActive} */}
             <Link className={flag ? active : navLinks} getProps={isActive} to={props.path}>
                 {props.name}
             </Link>

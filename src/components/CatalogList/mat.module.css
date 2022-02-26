@@ -80,16 +80,16 @@
     color: black;
 }
 
-.tab__btn:nth-child(2) {
+.tab__btn:nth-child(1) {
     order: 2;
 }
-.tab__btn:nth-child(3) {
+.tab__btn:nth-child(2) {
     order: 3;
 }
-.tab__btn:nth-child(4) {
+.tab__btn:nth-child(3) {
     order: 1;
 }
-.tab__btn:nth-child(5) {
+.tab__btn:nth-child(4) {
     order: 4;
 }
 .tab__btn:hover {

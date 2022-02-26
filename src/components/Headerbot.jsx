@@ -5,27 +5,31 @@ const Headerbot = () => {
         <>
             <div className={skillsWrap}>
                 <div className={skillItem}>
-                    <div className={skillTitle}>Профессионализм</div>
+                    <div className={skillTitle}>ПАРТНЕРСТВО</div>
                     <div className={skillDescr}>
-                        Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности
+                        Мы предлагаем нашим клиентам уникальные дилерские условия, оптимальные для
+                        вашего региона
                     </div>
                 </div>
                 <div className={skillItem}>
-                    <div className={skillTitle}>Прозрачность</div>
+                    <div className={skillTitle}>ТЕХНОЛОГИИ</div>
                     <div className={skillDescr}>
-                        Разнообразный и богатый опыт дальнейшее развитие
+                        Использование современных технологий обеспечивает качество продукции и её
+                        долговечность
                     </div>
                 </div>
                 <div className={skillItem}>
-                    <div className={skillTitle}>Инновации</div>
+                    <div className={skillTitle}>КОЛЛЕКТИВ</div>
                     <div className={skillDescr}>
-                        Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности
+                        Более 100 специалистов ежедневно работают над созданием высококачественной
+                        продукции
                     </div>
                 </div>
                 <div className={skillItem}>
-                    <div className={skillTitle}>Стремление быть лучшими</div>
+                    <div className={skillTitle}>АССОРТИМЕНТ</div>
                     <div className={skillDescr}>
-                        Разнообразный и богатый опыт дальнейшее развитие различных
+                        Мы предлагаем вам более 180 видов изделий систем выхлопа автомобиля и
+                        регулярно расширяем линейку номенклатуры
                     </div>
                 </div>
             </div>

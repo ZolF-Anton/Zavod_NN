@@ -36,7 +36,7 @@ function Footer() {
                     <StaticImage
                         src='../../images/logo-s-t.svg'
                         alt='logo first'
-                        width={110}
+                        width={65}
                         layout='constrained'
                     />
                 </div>

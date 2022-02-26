@@ -9,8 +9,8 @@ const MainBlockMin = () => {
     return (
         <section className={main_block_min}>
             <h1 className={main_block_min__title}>Завод автомобильных глушителей «КД» и «ТДГ» </h1>
-            <p className={main_block_min__subtitle}>Работаем с 343 года нашей эры</p>
-            <p className={main_block_min__subtitle}>ставили глушаки ещё римским легионерам!</p>
+            <p className={main_block_min__subtitle}></p>
+            <p className={main_block_min__subtitle}></p>
         </section>
     );
 };

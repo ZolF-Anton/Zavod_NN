@@ -13,40 +13,40 @@ function Select(props) {
     return (
         <>
             <div className={tab__wrap}>
-                <button
+                {/* <button
                     data-type="catalyst"
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'catalyst' })}
                     onClick={handleFilter}
                 >
                     Катализатор
-                </button>
+                </button> */}
                 <button
-                    data-type="resonator"
+                    data-type='resonator'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'resonator' })}
                     onClick={handleFilter}
                 >
                     Резонатор
                 </button>
                 <button
-                    data-type="muffler"
+                    data-type='muffler'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'muffler' })}
                     onClick={handleFilter}
                 >
                     Глушитель
                 </button>
                 <button
-                    data-type="collector"
+                    data-type='collector'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'collector' })}
                     onClick={handleFilter}
                 >
-                    Коллектор
+                    Приёмная труба
                 </button>
                 <button
-                    data-type="rest"
+                    data-type='rest'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'rest' })}
                     onClick={handleFilter}
                 >
-                    Остальное
+                    Прочее
                 </button>
             </div>
         </>

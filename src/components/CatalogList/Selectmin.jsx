@@ -14,13 +14,13 @@ function Select(props) {
     return (
         <>
             <div className={tab__wrap}>
-                <button
+                {/* <button
                     data-type='catalyst'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'catalyst' })}
                     onClick={handleFilter}
                 >
                     <Link to='/catalog'>Катализатор</Link>
-                </button>
+                </button> */}
                 <button
                     data-type='resonator'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'resonator' })}
@@ -40,14 +40,14 @@ function Select(props) {
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'collector' })}
                     onClick={handleFilter}
                 >
-                    <Link to='/catalog'>Коллектор</Link>
+                    <Link to='/catalog'>Приёмная труба</Link>
                 </button>
                 <button
                     data-type='rest'
                     className={cn(tab__btn, { [tab__btn__active]: btnName === 'rest' })}
                     onClick={handleFilter}
                 >
-                    <Link to='/catalog'>Остальное</Link>
+                    <Link to='/catalog'>Прочее</Link>
                 </button>
             </div>
         </>

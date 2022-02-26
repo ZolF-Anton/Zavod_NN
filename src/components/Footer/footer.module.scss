@@ -11,7 +11,7 @@
 
     &-logo {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 2rem;
         align-items: center;
     }
@@ -116,6 +116,7 @@
             align-items: center;
             grid-area: 1/1/2/3;
             justify-self: start;
+            padding-bottom: 2rem;
         }
 
         &-nav {

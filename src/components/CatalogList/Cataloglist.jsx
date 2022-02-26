@@ -10,7 +10,7 @@ const CatalogList = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
-    const [btnName, setBtnName] = useState('catalyst');
+    const [btnName, setBtnName] = useState('muffler');
 
     useEffect(() => {
         setError(true);

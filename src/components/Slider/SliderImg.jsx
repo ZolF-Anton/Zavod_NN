@@ -10,7 +10,7 @@ const SliderImg = (props) => {
     const data = useStaticQuery(
         graphql`
             query {
-                allFile(filter: { extension: { eq: "png" }, relativeDirectory: { eq: "slider" } }) {
+                allFile(filter: { extension: { eq: "jpg" }, relativeDirectory: { eq: "slider" } }) {
                     edges {
                         node {
                             id

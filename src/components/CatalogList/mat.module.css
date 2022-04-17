@@ -49,7 +49,7 @@
     background-color: #a62028;
 }
 .card_blue {
-    background-color: #3576ad;
+    background-color: #2b74ac;
 }
 .card_green {
     background-color: #1fa492;
@@ -117,10 +117,10 @@
 
 .scheme__img_resonator {
     width: 480px;
-    transform: translate(-71px, -42px);
+    transform: translate(-48px, -38px);
 }
 .scheme__img_muffler {
-    transform: translate(-115px, -121px);
+    transform: translate(-80px, -121px);
 }
 
 .scheme__img_active {
@@ -157,7 +157,7 @@
     }
     .scheme__img_resonator {
         width: 285px;
-        transform: translate(0px, 0px);
+        transform: translate(0px, 11px);
     }
     .scheme__img_muffler {
         transform: translate(-35px, -17px);
@@ -165,7 +165,7 @@
     .scheme__img_active {
         filter: drop-shadow(0px 0px 15px rgba(29, 34, 63, 0.5))
             drop-shadow(0px 0px 15px rgba(15, 4, 15, 0.9));
-        transform: scale(1.1) translate(-37px, -10px);
+        transform: scale(1.1) translate(-37px, 7px);
     }
 }
 
@@ -193,5 +193,69 @@
     }
     .tab__wrap {
         padding: 0 0.1rem;
+    }
+}
+
+/*******SEARCH**************/
+
+.search_container {
+    display: flex;
+    justify-content: center;
+}
+.search_wrap {
+    margin-top: 1.3rem;
+    display: flex;
+    justify-content: center;
+
+    gap: 0.3rem;
+    padding: 0px 2rem;
+}
+.search_area {
+    /* width: 50rem; */
+}
+
+.search_area input {
+    height: 2.3rem;
+    width: 63rem;
+    padding: 0 1rem;
+}
+
+.btn_search {
+    padding: 3px 7px;
+    background-color: #3576ad;
+    color: #e6f6fc;
+    border: none;
+    cursor: pointer;
+    height: 2.3rem;
+    width: 70px;
+    border-radius: 1px;
+}
+@media screen and (max-width: 1162px) {
+    .search_area input {
+        width: 50rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .search_container {
+        position: absolute;
+        transform: translate(-1px, -85px);
+    }
+    .search_wrap {
+        width: 250px;
+        gap: 0.3rem;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .search_area {
+        max-width: 250px;
+    }
+
+    .search_area input {
+        height: 2.3rem;
+        width: 250px;
+    }
+    .btn_search {
+        width: 250px;
     }
 }

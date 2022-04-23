@@ -21,29 +21,29 @@ function Select(props) {
                     Катализатор
                 </button> */}
                 <button
-                    data-type='resonator'
-                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'resonator' })}
+                    data-type='resonators'
+                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'resonators' })}
                     onClick={handleFilter}
                 >
                     Резонатор
                 </button>
                 <button
-                    data-type='muffler'
-                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'muffler' })}
+                    data-type='mufflers'
+                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'mufflers' })}
                     onClick={handleFilter}
                 >
                     Глушитель
                 </button>
                 <button
-                    data-type='collector'
-                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'collector' })}
+                    data-type='collectors'
+                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'collectors' })}
                     onClick={handleFilter}
                 >
                     Приёмная труба
                 </button>
                 <button
-                    data-type='rest'
-                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'rest' })}
+                    data-type='others'
+                    className={cn(tab__btn, { [tab__btn__active]: btnName === 'others' })}
                     onClick={handleFilter}
                 >
                     Прочее

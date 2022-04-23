@@ -9,35 +9,45 @@ import {
     card_disabled,
     card,
     card_title,
+    card_img,
 } from './mat.module.css';
 
+// [0].attributes.image.data.attributes.formats.medium.url;
+
 function Part(props) {
-    const { Name, Vendor, id, Type, Images, SoldOut } = props;
+    const { name, vendor, id, type, image, soldOut, partNumber } = props;
+    const imgShort = 'image.data.attributes.formats.medium';
+    const strapiUrl = 'https://strapi.ostkost.ru';
 
     return (
         <>
             <div id={id} className={cn(card)}>
                 <div>
-                    {!Images[0].thumbnails.large.url ? (
+                    {!image?.data?.attributes ? (
                         <img
-                            alt={Name}
-                            src="https://via.placeholder.com/150x300.png?text=Poster+was+ninjaed+by+wild+Gremlins"
+                            className={card_img}
+                            alt={name}
+                            src='https://via.placeholder.com/300x300.png?text=Картинка+попала+под+санкции+Gremlins'
                         />
                     ) : (
-                        <img alt={Name} src={Images[0].thumbnails.large.url} />
+                        <img
+                            className={card_img}
+                            alt={name}
+                            src={strapiUrl + image.data.attributes.formats.small.url}
+                        />
                     )}
                 </div>
                 <div
                     className={cn(card_content, {
-                        [card_red]: Type === 'Premium',
-                        [card_blue]: Type === 'Middle',
-                        [card_green]: Type === 'Optima',
-                        [card_disabled]: SoldOut === true,
+                        [card_red]: type === 'premium',
+                        [card_blue]: type === 'middle',
+                        [card_green]: type === 'optima',
+                        [card_disabled]: soldOut === true,
                     })}
                 >
-                    {Vendor} <span>{Type}</span>
+                    {vendor} <span>{type}</span> {partNumber}
                     <p className={card_title}>
-                        <span>{Name}</span>
+                        <span>{name}</span>
                     </p>
                 </div>
             </div>

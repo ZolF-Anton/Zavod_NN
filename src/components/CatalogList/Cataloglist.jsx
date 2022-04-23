@@ -11,20 +11,51 @@ const CatalogList = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
-    const [btnName, setBtnName] = useState('muffler');
-    const [filteredCatalog, setFilteredCatalog] = useState([]);
+    const [btnName, setBtnName] = useState('mufflers');
+    //const [filteredCatalog, setFilteredCatalog] = useState([]);
+    //import * as qs from 'qs';
+    const qs = require('qs');
+
+    const strapiAPI = `https://strapi.ostkost.ru/api`;
 
     //const { pathname, search } = useLocation();
     //const { push } = useHistory();
+
+    const query = qs.stringify(
+        {
+            fields: ['name', 'type', 'vendor', 'soldOut', 'partNumber'],
+            populate: {
+                image: {
+                    fields: ['name', 'url', 'formats'],
+                },
+            },
+            pagination: {
+                page: 1,
+                pageSize: 6,
+            },
+        },
+
+        {
+            encodeValuesOnly: true,
+        }
+    );
+    console.log(`${strapiAPI}/${btnName}?${query}`);
+
+    fetch(`${strapiAPI}/${btnName}?${query}`)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('data.data:', data.data);
+        });
 
     useEffect(() => {
         setError(true);
         setLoad(true);
 
-        fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${btnName}?api_key=key9UItv1zOIxkpng`)
+        fetch(`${strapiAPI}/${btnName}?${query}`)
             .then((response) => response.json())
             .then((data) => {
-                setParts(filteredCatalog.length >= 1 ? filteredCatalog : data.records);
+                console.log('data.data:', data.data);
+                setParts(data.data);
                 setError(false);
                 setLoad(false);
             })
@@ -34,7 +65,31 @@ const CatalogList = () => {
                 setError(true);
                 setLoad(true);
             });
-    }, [filteredCatalog]);
+    }, []);
+
+    //*******************************************************************************/
+
+    // useEffect(() => {
+    //     setError(true);
+    //     setLoad(true);
+
+    //     fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${btnName}?api_key=key9UItv1zOIxkpng`)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             setParts(filteredCatalog.length >= 1 ? filteredCatalog : data.records);
+    //             setError(false);
+    //             setLoad(false);
+    //         })
+
+    //         .catch((err) => {
+    //             console.error(err);
+    //             setError(true);
+    //             setLoad(true);
+    //         });
+    // }, [filteredCatalog]);
+
+    //*******************************************************************************/
+
     // useEffect(() => {
     //     setError(true);
     //     setLoad(true);
@@ -55,16 +110,17 @@ const CatalogList = () => {
     // }, []);
 
     let selectParts = (partName) => {
+        console.log('####partName####:', partName);
         setBtnName(partName);
         setLoad(true);
-        fetch(`https://api.airtable.com/v0/appYj9f1YThzVwfnD/${partName}?api_key=key9UItv1zOIxkpng`)
+        fetch(`${strapiAPI}/${partName}?${query}`)
             .then((response) => response.json())
             .then((data) => {
-                if (data.records) {
-                    setParts(data.records);
+                if (data.data) {
+                    setParts(data.data);
                     setError(false);
                     setLoad(false);
-                } else if (!data.records && data.error === 'Parts not found!') {
+                } else if (data.error || !data.attributes) {
                     setParts([]);
                     setError(true);
                     setLoad(false);
@@ -72,37 +128,11 @@ const CatalogList = () => {
             });
     };
 
-    const handleSearch = (str) => {
-        handleFilteredCatalog(str);
-        filteredParts();
-    };
-
-    const handleFilteredCatalog = (str) => {
-        setFilteredCatalog(
-            parts.filter((unit) => {
-                return unit.fields.Name.toLowerCase().includes(str.toLowerCase());
-            })
-        );
-    };
-
-    const filteredParts = () => {
-        if (filteredCatalog) {
-            setParts(filteredCatalog);
-            setError(false);
-            setLoad(false);
-        } else if (!filteredCatalog) {
-            setParts([]);
-            setError(true);
-            setLoad(false);
-        }
-        console.log('xxxxxxxxxxxxxxxxxfilteredCatalog', filteredCatalog);
-    };
-    console.log('000000000000000filteredCatalog', filteredCatalog);
     return (
         <div>
             <div className={cataloglist__wrap}>
                 <Select selectParts={selectParts} btnName={btnName} />
-                <Search selectParts={selectParts} btnName={btnName} cb={handleSearch} />
+                <Search selectParts={selectParts} btnName={btnName} />
                 <Schema selectParts={selectParts} btnName={btnName} />
             </div>
             {load ? <Preloader /> : <Partlist parts={parts} errorLoad={error} />}
@@ -146,3 +176,30 @@ export default CatalogList;
 //         return unit.fields.Name.toLowerCase().includes(str.toLowerCase());
 //     });
 // };
+
+// const handleSearch = (str) => {
+//     handleFilteredCatalog(str);
+//     filteredParts();
+// };
+
+// const handleFilteredCatalog = (str) => {
+//     setFilteredCatalog(
+//         parts.filter((unit) => {
+//             return unit.fields.Name.toLowerCase().includes(str.toLowerCase());
+//         })
+//     );
+// };
+
+// const filteredParts = () => {
+//     if (filteredCatalog) {
+//         setParts(filteredCatalog);
+//         setError(false);
+//         setLoad(false);
+//     } else if (!filteredCatalog) {
+//         setParts([]);
+//         setError(true);
+//         setLoad(false);
+//     }
+//     //console.log('xxxxxxxxxxxxxxxxxfilteredCatalog', filteredCatalog);
+// };
+//console.log('000000000000000filteredCatalog', filteredCatalog);

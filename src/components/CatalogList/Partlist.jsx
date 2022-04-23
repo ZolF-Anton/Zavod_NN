@@ -16,7 +16,7 @@ function Partlist(props) {
                     </>
                 ) : (
                     parts.map((part) => {
-                        return <Part key={part.id} id={part.id} {...part.fields} />;
+                        return <Part key={part.id} id={part.id} {...part.attributes} />;
                     })
                 )}
             </div>

@@ -23,34 +23,34 @@ const Schema = (props) => {
             <div className={scheme__wrap}>
                 <div className={cn(scheme__part)}>
                     <img
-                        data-type='collector'
+                        data-type='collectors'
                         className={cn(scheme__img, scheme__img_collector, {
-                            [scheme__img_active]: btnName === 'collector',
+                            [scheme__img_active]: btnName === 'collectors',
                         })}
                         src={collector}
-                        alt='collector'
+                        alt='collectors'
                         onClick={handleFilter}
                     />
                 </div>
                 <div className={cn(scheme__part)}>
                     <img
-                        data-type='resonator'
+                        data-type='resonators'
                         className={cn(scheme__img, scheme__img_resonator, {
-                            [scheme__img_active]: btnName === 'resonator',
+                            [scheme__img_active]: btnName === 'resonators',
                         })}
                         src={resonator}
-                        alt='resonator'
+                        alt='resonators'
                         onClick={handleFilter}
                     />
                 </div>
                 <div className={cn(scheme__part)}>
                     <img
-                        data-type='muffler'
+                        data-type='mufflers'
                         className={cn(scheme__img, scheme__img_muffler, {
-                            [scheme__img_active]: btnName === 'muffler',
+                            [scheme__img_active]: btnName === 'mufflers',
                         })}
                         src={muffler}
-                        alt='muffler'
+                        alt='mufflers'
                         onClick={handleFilter}
                     />
                 </div>

@@ -8,17 +8,20 @@ function Search({ cb = Function.prototype, btnName, selectParts }) {
 
     useEffect(() => {
         switch (btnName) {
-            case 'collector':
+            case 'collectors':
                 return setPlaceholder('Найти приёмную трубу');
 
-            case 'resonator':
+            case 'resonators':
                 return setPlaceholder('Найти резонатор');
 
-            case 'rest':
+            case 'others':
                 return setPlaceholder('Найти прочие детали');
 
-            default:
+            case 'mufflers':
                 return setPlaceholder('Найти глушитель');
+
+            default:
+                return setPlaceholder('Найти всё');
         }
     }, [btnName]);
 

@@ -11,7 +11,7 @@ const CatalogListMin = () => {
     const [parts, setParts] = useState([]);
     const [error, setError] = useState(true);
     const [load, setLoad] = useState(true);
-    const [btnName, setBtnName] = useState('muffler');
+    const [btnName, setBtnName] = useState('mufflers');
 
     useEffect(() => {
         setError(true);

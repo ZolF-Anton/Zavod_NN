@@ -41,7 +41,7 @@ function initApparatusSlider() {
         machines.forEach((machine) => {
             const { Photo, Name } = machine.fields || {};
             const hasImage = Array.isArray(Photo) && Photo.length > 0;
-            const imageUrl = hasImage ? Photo[0].url : 'img/coffgear.png'; // сделать запасную фотку если фото нет
+            const imageUrl = hasImage ? Photo[0].url : 'img/anygear.png'; // сделать запасную фотку если фото нет
             const sliderItem = document.createElement('li');
             sliderItem.classList.toggle('apparatus__slider-item', true);
 

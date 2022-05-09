@@ -27,7 +27,7 @@ function Part(props) {
                         <img
                             className={card_img}
                             alt={name}
-                            src='https://via.placeholder.com/300x300.png?text=Картинка+попала+под+санкции+Gremlins'
+                            src='https://via.placeholder.com/325x217.png?text=Картинка+попала+под+санкции+Gremlins'
                         />
                     ) : (
                         <img

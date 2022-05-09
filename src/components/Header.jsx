@@ -31,7 +31,7 @@ const Header = () => {
                         // By using the same grid area for both, they are stacked on top of each other
                         //gridArea: '1/1/2/5',
                         position: 'fixed',
-                        width: '100vw',
+                        width: '100%',
                         background: 'rgba(255, 255, 255, 0.8)',
                         zIndex: '20',
                         // This centers the other elements inside the hero component

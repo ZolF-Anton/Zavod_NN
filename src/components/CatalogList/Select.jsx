@@ -1,13 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
-import { tab__btn, tab__wrap, tab__btn__active } from './mat.module.css';
+import { tab__btn, tab__wrap, tab__btn__active } from './mat.module.scss';
 
 function Select(props) {
-    //const [partName, setSelect] = useState('');
-    const { selectParts, btnName } = props;
+    const { btnName, setBtnName, setClicker } = props;
 
     let handleFilter = (event) => {
-        selectParts(event.target.dataset.type);
+        setClicker((prev) => !prev);
+        setBtnName(event.target.dataset.type);
     };
 
     return (

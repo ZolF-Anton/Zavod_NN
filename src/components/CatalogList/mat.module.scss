@@ -32,9 +32,12 @@
 }
 
 .card_content {
-    padding: 24px;
+    display: flex;
+    padding: 18px 20px;
     border-radius: 0 0 2px 2px;
-    min-height: 130px;
+    min-height: 125px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card_title {
     font-family: Roboto;
@@ -42,7 +45,7 @@
     font-size: 24px;
     text-align: center;
     color: whitesmoke;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .card_red {
@@ -59,6 +62,67 @@
 }
 .card_img {
     width: 100%;
+    cursor: zoom-in;
+}
+.card_article {
+    margin-top: 1rem;
+    text-align: center;
+}
+.card_article span {
+    cursor: copy;
+}
+.card_bigPicture {
+    width: 1000px;
+    height: 667px;
+    position: fixed;
+    z-index: 55;
+    border: 5px solid black;
+    top: 20vh;
+}
+.card_copyArt {
+    position: absolute;
+    left: 91px;
+    bottom: 5px;
+    border-radius: 9px;
+    color: whitesmoke;
+    padding: 1.7px;
+}
+.card_copyArt[animation='1'] {
+    animation: showCopy 0.9s ease-in both;
+}
+.card_logo__img {
+    max-width: 4rem;
+    max-height: 2rem;
+    position: absolute;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.part_modal__wraper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    border-color: #368fad;
+    z-index: 40;
+}
+.part_modal__close {
+    display: flex;
+    justify-content: end;
+}
+.part_modal__close span {
+    border-radius: 5px;
+    width: 3em;
+    height: 0.47em;
+    background-color: #2b74ac;
+    position: absolute;
+    transform: rotate(45deg) translateY(19px) translateX(9px);
+}
+.part_modal__close span:first-child {
+    transform: rotate(135deg) translateY(-9px) translateX(19px);
 }
 
 .tab__wrap {
@@ -68,6 +132,10 @@
     order: 2;
     padding: 0 2rem;
 }
+.tab__wrap a {
+    text-decoration: none;
+}
+
 .tab__btn {
     display: flex;
     align-items: center;
@@ -77,10 +145,6 @@
     height: 59px;
 
     cursor: pointer;
-}
-.tab__btn a {
-    text-decoration: none;
-    color: black;
 }
 
 .tab__btn:nth-child(1) {
@@ -99,6 +163,9 @@
     background-color: #ade9ff;
 }
 .tab__btn__active {
+    background-color: #368fad;
+}
+.tab__btn:active {
     background-color: #368fad;
 }
 
@@ -145,10 +212,21 @@
 }
 
 @media screen and (max-width: 1100px) {
-    /*fix_*/
+    .card_bigPicture {
+        width: 800px;
+        height: 537px;
+        position: fixed;
+        top: 15vh;
+    }
 }
 
 @media screen and (max-width: 960px) {
+    .card_bigPicture {
+        width: 700px;
+        height: 470px;
+        position: fixed;
+        top: 15vh;
+    }
     .tab__wrap {
         flex-direction: column;
     }
@@ -169,6 +247,25 @@
         filter: drop-shadow(0px 0px 15px rgba(29, 34, 63, 0.5))
             drop-shadow(0px 0px 15px rgba(15, 4, 15, 0.9));
         transform: scale(1.1) translate(-37px, 7px);
+    }
+}
+
+@media (pointer: coarse) and (orientation: portrait) {
+    .card_bigPicture {
+        width: 350px;
+        height: 234px;
+        position: fixed;
+        top: 30vh;
+        left: 6vw;
+    }
+}
+
+@media (pointer: coarse) and (orientation: landscape) {
+    .card_bigPicture {
+        width: 667px;
+        height: 445px;
+        position: fixed;
+        top: 0vh;
     }
 }
 
@@ -209,7 +306,6 @@
     margin-top: 1.3rem;
     display: flex;
     justify-content: center;
-
     gap: 0.3rem;
     padding: 0px 2rem;
 }
@@ -233,6 +329,11 @@
     width: 70px;
     border-radius: 1px;
 }
+
+.btn_search:active {
+    background-color: #092d4b;
+}
+
 @media screen and (max-width: 1162px) {
     .search_area input {
         width: 50rem;
@@ -260,5 +361,38 @@
     }
     .btn_search {
         width: 250px;
+    }
+}
+
+/*/////////////////////////Animate////////////////*/
+
+@keyframes showCopy {
+    0% {
+        transform: scale3d(1, 1, 1) translate(0%, +10%);
+        opacity: 1;
+    }
+    30% {
+        transform: scale3d(1.1, 1.1, 1) translate(0%, +30%);
+        opacity: 0.8;
+    }
+    40% {
+        transform: scale3d(1.15, 1.15, 1) translate(0%, +60%);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale3d(1.25, 1.25, 1) translate(0%, +80%);
+        opacity: 0.5;
+    }
+    65% {
+        transform: scale3d(1, 1, 1) translate(0%, +100%);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale3d(0.7, 0.7, 1) translate(0%, +110%);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale3d(1, 1, 1) translate(0%, +130%);
+        opacity: 0;
     }
 }

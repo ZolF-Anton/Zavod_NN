@@ -12,8 +12,23 @@
 .skill-item {
     color: whitesmoke;
     max-width: 16rem;
-    &::before {
+    &:nth-child(1)::before {
         content: url(../images/icons/header/iconMedal.svg);
+        position: absolute;
+        transform: translateX(-40px);
+    }
+    &:nth-child(2)::before {
+        content: url(../images/icons/header/iconDocs.svg);
+        position: absolute;
+        transform: translateX(-40px);
+    }
+    &:nth-child(3)::before {
+        content: url(../images/icons/header/iconLamp.svg);
+        position: absolute;
+        transform: translateX(-40px);
+    }
+    &:nth-child(4)::before {
+        content: url(../images/icons/header/iconGraph.svg);
         position: absolute;
         transform: translateX(-40px);
     }

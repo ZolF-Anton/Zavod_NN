@@ -11,12 +11,13 @@ import {
     scheme__img_resonator,
     scheme__img_muffler,
     scheme__img_active,
-} from './mat.module.css';
+} from './mat.module.scss';
 
 const Schema = (props) => {
-    const { btnName, selectParts } = props;
+    const { btnName, setBtnName, setClicker } = props;
     let handleFilter = (event) => {
-        selectParts(event.target.dataset.type);
+        setClicker((prev) => !prev);
+        setBtnName(event.target.dataset.type);
     };
     return (
         <>

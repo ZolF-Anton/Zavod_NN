@@ -4,6 +4,32 @@
     margin-top: 70px;
     margin-bottom: 25px;
 }
+.cataloglist_btn {
+    font-size: 1.3rem;
+    padding: 8px;
+    background: $ActBlue;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    &:active {
+        background: $Corp-Blue;
+    }
+    &__hide {
+        visibility: hidden;
+    }
+
+    &__wrap {
+        max-width: 1008px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: end;
+    }
+}
+@media (pointer: coarse) and (orientation: portrait) {
+    .cataloglist_btn__wrap {
+        justify-content: center;
+    }
+}
 
 @media screen and (max-width: 960px) {
     .cataloglist__wrap {

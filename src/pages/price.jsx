@@ -10,7 +10,7 @@ import Footer from '../components/Footer/Footer';
 const PricePage = () => {
     return (
         <>
-            <Helmet title="Price Page" defer={false}>
+            <Helmet title='Price Page' defer={false}>
                 <title>About Page</title>
             </Helmet>
             <Navbar />

@@ -12,13 +12,9 @@ import {
     scheme__img_resonator,
     scheme__img_muffler,
     scheme__img_active,
-} from './mat.module.css';
+} from './mat.module.scss';
 
-const Schema = (props) => {
-    const { btnName, selectParts } = props;
-    let handleFilter = (event) => {
-        selectParts(event.target.dataset.type);
-    };
+const Schema = () => {
     return (
         <>
             <Link to='/catalog'>
@@ -26,34 +22,25 @@ const Schema = (props) => {
                     <div className={cn(scheme__part)}>
                         <img
                             data-type='collectors'
-                            className={cn(scheme__img, scheme__img_collector, {
-                                [scheme__img_active]: btnName === 'collectors',
-                            })}
+                            className={cn(scheme__img, scheme__img_collector)}
                             src={collector}
                             alt='collectors'
-                            onClick={handleFilter}
                         />
                     </div>
                     <div className={cn(scheme__part)}>
                         <img
                             data-type='resonators'
-                            className={cn(scheme__img, scheme__img_resonator, {
-                                [scheme__img_active]: btnName === 'resonators',
-                            })}
+                            className={cn(scheme__img, scheme__img_resonator)}
                             src={resonator}
                             alt='resonators'
-                            onClick={handleFilter}
                         />
                     </div>
                     <div className={cn(scheme__part)}>
                         <img
                             data-type='mufflers'
-                            className={cn(scheme__img, scheme__img_muffler, {
-                                [scheme__img_active]: btnName === 'mufflers',
-                            })}
+                            className={cn(scheme__img, scheme__img_muffler)}
                             src={muffler}
                             alt='mufflers'
-                            onClick={handleFilter}
                         />
                     </div>
                 </div>

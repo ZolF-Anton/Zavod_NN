@@ -4,13 +4,14 @@
         font-size: 46px;
         font-weight: bold;
         color: $Corp-Black;
-        text-align: left;
+        text-align: center;
     }
     &-wrap {
         margin-top: 2rem;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        justify-content: center;
+        gap: 5rem;
     }
     &-name {
         display: flex;

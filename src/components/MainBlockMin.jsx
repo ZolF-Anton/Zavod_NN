@@ -10,7 +10,6 @@ const MainBlockMin = () => {
         <section className={main_block_min}>
             <h1 className={main_block_min__title}>Завод автомобильных глушителей «КД» и «ТДГ» </h1>
             <p className={main_block_min__subtitle}></p>
-            <p className={main_block_min__subtitle}></p>
         </section>
     );
 };

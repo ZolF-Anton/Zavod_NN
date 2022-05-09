@@ -28,27 +28,6 @@ const Auto = () => {
                         placeholder='blurred'
                     />
                 </div>
-                <div className={autoName}>
-                    <StaticImage
-                        src='../../images/icons/auto/gaz.svg'
-                        alt='Car brand name'
-                        placeholder='blurred'
-                    />
-                </div>
-                <div className={autoName}>
-                    <StaticImage
-                        src='../../images/icons/auto/vaz.svg'
-                        alt='Car brand name'
-                        placeholder='blurred'
-                    />
-                </div>
-                <div className={autoName}>
-                    <StaticImage
-                        src='../../images/icons/auto/uaz.svg'
-                        alt='Car brand name'
-                        placeholder='blurred'
-                    />
-                </div>
             </div>
         </section>
     );

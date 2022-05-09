@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { search_container, search_wrap, btn_search, search_area } from './mat.module.css';
+import { search_container, search_wrap, btn_search, search_area } from './mat.module.scss';
 
-function Search({ cb = Function.prototype, btnName, selectParts }) {
+function Search({ cb = Function.prototype, btnName }) {
     const [value, setValue] = useState('');
     const [placeholder, setPlaceholder] = useState('Найти глушитель');
 
     useEffect(() => {
+        setValue('');
         switch (btnName) {
             case 'collectors':
                 return setPlaceholder('Найти приёмную трубу');

@@ -82,7 +82,16 @@ const CatalogList = () => {
             setError(true);
             setLoad(false);
         }
-    }, [allData.length, counter]);
+    }, [allData, counter]);
+    useEffect(() => {
+        if (parts.length === allData.length) {
+            setBtnOff(true);
+            console.log('setBtnOff', 'true', btnOff);
+        } else {
+            console.log('setBtnOff', 'false', btnOff);
+            setBtnOff(false);
+        }
+    }, [parts]);
 
     const handleBtnOff = (dData) => {
         console.log(parts.length, allData.length);
@@ -103,6 +112,7 @@ const CatalogList = () => {
         const perPage = 3;
         let increment = perPage * counter;
         console.log('#####handleAllData####:', increment);
+        console.log('#####parts.length####:', parts.length);
         return data.slice(0, increment);
     };
 
@@ -137,12 +147,12 @@ const CatalogList = () => {
     };
     const filteredByAssembler = (str) => {
         console.log(str);
-        setParts(
+        setAllData(
             allData.filter((assembler) => {
                 return assembler.attributes.type.toLowerCase().indexOf(str.toLowerCase()) !== -1;
             })
         );
-        setBtnOff(true);
+        setBtnOff(false);
     };
 
     // const newFiltration = (rawData, str) => {

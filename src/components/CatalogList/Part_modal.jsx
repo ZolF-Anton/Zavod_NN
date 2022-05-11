@@ -5,7 +5,6 @@ import { card_img, card_bigPicture, hidden, part_modal__close } from './mat.modu
 const Part_modal = (props) => {
     const { image, strapiUrl, imgShow, setImgShow } = props;
 
-    console.log('imgShow:', imgShow);
     return (
         <div
             onClick={() => setImgShow(true)}

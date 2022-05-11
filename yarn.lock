@@ -1006,6 +1006,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.3.4":
+  version "7.17.9"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
+  integrity sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.15.5":
   version "7.15.7"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.15.7.tgz#97c04d0dda7c3b2b8d2679957d619ac581471d4d"
@@ -5251,6 +5258,13 @@ gatsby-plugin-utils@^1.14.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
     joi "^17.4.2"
+
+gatsby-plugin-yandex-metrica@^0.1.3-check:
+  version "0.1.3-check"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-yandex-metrica/-/gatsby-plugin-yandex-metrica-0.1.3-check.tgz#3b06c4934633f4cf159d303ece6c5e47ff2e0914"
+  integrity sha512-DOJUxZgMWYn5OuuJaw6JtkTRIDCcqVj0mufSS7y7H6GU6NhR1CiIlgHhiTVOmrGvnKNj1Q38hINPkd5hWTNR3Q==
+  dependencies:
+    "@babel/runtime" "^7.3.4"
 
 gatsby-react-router-scroll@^4.14.0:
   version "4.14.0"

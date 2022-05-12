@@ -9,11 +9,12 @@ import PriceForm from '../components/Other/PriceForm';
 import Auto from '../components/Autos/Auto';
 import Slider from '../components/Slider/Slider';
 import Footer from '../components/Footer/Footer';
+import Scroll2top from '../util/scroll2top';
 
 const AboutPage = () => {
     return (
         <>
-            <Helmet title="Catalog Page" defer={false}>
+            <Helmet title='Catalog Page' defer={false}>
                 <title>About Page</title>
             </Helmet>
 
@@ -25,6 +26,7 @@ const AboutPage = () => {
                 <PriceForm />
                 <Auto />
             </main>
+            <Scroll2top />
             <Footer />
         </>
     );

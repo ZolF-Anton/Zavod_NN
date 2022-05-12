@@ -30,6 +30,12 @@
         justify-content: center;
     }
 }
+@media screen and (max-width: 1200px) {
+    .cataloglist_btn__wrap {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 @media screen and (max-width: 960px) {
     .cataloglist__wrap {

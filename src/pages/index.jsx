@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Aboutmin from '../components/AboutMin/Aboutmin';
 import Footer from '../components/Footer/Footer';
 import CatalogListMin from '../components/CatalogList/Cataloglistmin';
+import Scroll2top from '../util/scroll2top';
 
 // markup
 const IndexPage = () => {
@@ -17,6 +18,7 @@ const IndexPage = () => {
                 <CatalogListMin />
                 <Aboutmin />
             </main>
+            <Scroll2top />
             <Footer />
         </>
     );

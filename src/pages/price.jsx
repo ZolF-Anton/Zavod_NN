@@ -6,6 +6,7 @@ import PriceForm from '../components/Other/PriceForm';
 import Auto from '../components/Autos/Auto';
 import AutoPopular from '../components/Autos/AutoPopular';
 import Footer from '../components/Footer/Footer';
+import Scroll2top from '../util/scroll2top';
 
 const PricePage = () => {
     return (
@@ -20,6 +21,7 @@ const PricePage = () => {
                 <PriceForm />
                 <AutoPopular />
             </main>
+            <Scroll2top />
             <Footer />
         </>
     );

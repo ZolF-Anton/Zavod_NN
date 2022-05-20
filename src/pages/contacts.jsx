@@ -9,12 +9,7 @@ const ContactsPage = () => {
             <title>Contacts Page</title>
 
             <Navbar />
-            <h1>
-                Contacts page !!!
-                <span role='img' aria-label='Party popper emojis'>
-                    🎉🎉🎉
-                </span>
-            </h1>
+            <h1>В состоянии разработки!</h1>
         </main>
     );
 };

@@ -17,7 +17,7 @@ const Part_modal = (props) => {
             {!image?.data?.attributes ? (
                 <img
                     className={card_img}
-                    src='https://via.placeholder.com/325x217.png?text=Картинка+попала+под+санкции+Gremlins'
+                    src='https://via.placeholder.com/325x217.png?text=Картинка+не+найдена'
                 />
             ) : (
                 <img

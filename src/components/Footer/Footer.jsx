@@ -97,8 +97,12 @@ function Footer() {
             <div className={footerPolitics}>
                 {/* сделать ссылки */}
 
-                <div className={footerPitem}>Обработка персональных данных</div>
-                <div className={footerPitem}>Политика конфиденциальности</div>
+                <div className={footerPitem}>
+                    <Link to={'/privacy'}>Обработка персональных данных</Link>
+                </div>
+                <div className={footerPitem}>
+                    <Link to={'/privacy'}>Политика конфиденциальности</Link>
+                </div>
                 <div className={footerPitem}>
                     Завод глушителей "КД" и "ТДГ" | zavod-kd.ru ©{getCurrentYear()}
                 </div>

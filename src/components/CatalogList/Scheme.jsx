@@ -16,7 +16,7 @@ import {
 const Schema = (props) => {
     const { btnName, setBtnName, setClicker } = props;
     let handleFilter = (event) => {
-        setClicker((prev) => !prev);
+        //setClicker((prev) => !prev);
         setBtnName(event.target.dataset.type);
     };
     return (

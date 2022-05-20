@@ -75,7 +75,7 @@ label {
     margin-top: 0.3rem;
 }
 .input__wrap {
-    display: flex;
+    display: fl ex;
     flex-direction: column;
     gap: 20px;
 }
@@ -98,6 +98,96 @@ label {
     &:disabled {
         background-color: $Sec-Gray;
         cursor: not-allowed;
+    }
+}
+.notify__wrap {
+    top: 10rem;
+    position: fixed;
+    right: 50%;
+    transform: translateX(50%);
+}
+.notify__message {
+    z-index: 15;
+    padding: 1.3rem;
+    color: $Ctr-White;
+    border-radius: 7px;
+    &__green {
+        background-color: green;
+    }
+    &__red {
+        background-color: darkred;
+    }
+}
+.notify__message[animation='1'] {
+    animation: showMSG 0.9s ease-in both;
+}
+.notify__message[animation='2'] {
+    animation: showMSGRed 0.9s ease-in both;
+}
+.hidden {
+    display: none;
+}
+
+/*/////////////////////////Animate////////////////*/
+
+@keyframes showMSG {
+    0% {
+        transform: scale3d(1, 1, 1) translate(0%, 0%);
+        opacity: 1;
+    }
+    30% {
+        transform: scale3d(1.1, 1.1, 1) translate(0%, 0%);
+        opacity: 0.8;
+    }
+    40% {
+        transform: scale3d(1.15, 1.15, 1) translate(0%, 0%);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1) translate(+20%, 0%);
+        opacity: 0.5;
+    }
+    65% {
+        transform: scale3d(0.91, 0.91, 1) translate(+40%, 0%);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale3d(0.7, 0.7, 1) translate(+70%, 0%);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale3d(0.2, 0.2, 1) translate(+190%, 0%);
+        opacity: 0;
+    }
+}
+@keyframes showMSGRed {
+    0% {
+        transform: scale3d(1, 1, 1) translate(0%, 0%);
+        opacity: 1;
+    }
+    30% {
+        transform: scale3d(1.1, 1.1, 1) translate(0%, 0%);
+        opacity: 0.8;
+    }
+    40% {
+        transform: scale3d(1.15, 1.15, 1) translate(0%, 0%);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1) translate(-20%, 0%);
+        opacity: 0.5;
+    }
+    65% {
+        transform: scale3d(0.91, 0.91, 1) translate(-40%, 0%);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale3d(0.7, 0.7, 1) translate(-70%, 0%);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale3d(0.2, 0.2, 1) translate(-190%, 0%);
+        opacity: 0;
     }
 }
 

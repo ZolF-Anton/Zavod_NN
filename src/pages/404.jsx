@@ -31,11 +31,7 @@ const NotFoundPage = () => {
             <title>Not found</title>
             <h1 style={headingStyles}>404 Страница не найдена</h1>
             <p style={paragraphStyles}>
-                Извините{' '}
-                <span role="img" aria-label="Pensive emoji">
-                    😔
-                </span>{' '}
-                мы не смогли найти то, что вы ищите.
+                Извините мы не смогли найти то, что вы ищите.
                 <br />
                 {process.env.NODE_ENV === 'development' ? (
                     <>
@@ -45,7 +41,7 @@ const NotFoundPage = () => {
                     </>
                 ) : null}
                 <br />
-                <Link to="/">На Главную</Link>.
+                <Link to='/'>На Главную</Link>.
             </p>
         </main>
     );

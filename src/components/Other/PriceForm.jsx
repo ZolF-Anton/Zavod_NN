@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
+
 import {
     contactsInput,
     modalWindow,
@@ -12,12 +13,20 @@ import {
     btnPrice,
     contacts__policy,
     priceDescr,
+    notify__message,
+    notify__message__green,
+    notify__message__red,
+    notify__wrap,
+    hidden,
 } from './priceform.module.scss';
+import axios from 'axios';
+import cn from 'classnames';
 
 const PriceForm = ({ active, setActive }) => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('+7');
     const [email, setEmail] = useState('');
+    const [text, setText] = useState('');
 
     const [nameDirty, setNameDirty] = useState(false);
     const [phoneDirty, setPhoneDirty] = useState(false);
@@ -26,6 +35,10 @@ const PriceForm = ({ active, setActive }) => {
     const [phoneError, setPhoneError] = useState('Заполните поле');
     const [emailError, setEmailError] = useState('Заполните поле');
     const [checkedFlag, setCheckedFlag] = useState(true);
+    const [notify, setNotify] = useState(true);
+    const [hide, setHide] = useState(true);
+    const [animation, setAnimation] = useState(0);
+    const [msgText, setMsgText] = useState('############');
 
     const [formValid, setFormValid] = useState(false);
 
@@ -104,13 +117,142 @@ const PriceForm = ({ active, setActive }) => {
         }
     };
 
+    const handleSend = async (e) => {
+        //console.log(e);
+        //console.log(e.target.text.value);
+        setText(e.target.text.value);
+        e.preventDefault();
+
+        let data = {
+            to: 'zolfkn@yandex.ru',
+            subject: 'Запарос прайса (XVII)',
+            text: '${name} (тел: ${phone}, e-mail: ${email}), ${text}',
+        };
+        const a = JSON.stringify(data);
+        const b =
+            '{"to":"zolfkn@yandex.ru","subject":"Запарос прайса (XVII)","text":"name (тел: phone, e-mail: email),{text}"}';
+        const apiLink = 'https://api.ostkost.ru/api/zavodkd/mail';
+        const apiLink2 = 'https://ptsv2.com/t/1nilm-1653047633/post';
+
+        try {
+            const response = await fetch(apiLink, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': 'X-Requested-With',
+                    'User-Agent': 'PostmanRuntime/7.29.0',
+                },
+                body: a,
+            });
+            console.log(response);
+            console.log(b);
+            if (!response.ok) {
+                throw new Error('Ответ сети был не ok.');
+            }
+            const answer = await response.json();
+            console.log('@@@@@@@@@@@@@answer@@@@@@@', answer);
+        } catch (error) {
+            console.error('################', error);
+        }
+    };
+
+    const handleSendXhr = async (e) => {
+        e.preventDefault();
+        // 1. Создаём новый XMLHttpRequest-объект
+        let xhr = new XMLHttpRequest();
+
+        // 2. Настраиваем его: GET-запрос по URL https://api.ostkost.ru/api/zavodkd/mail
+        xhr.open('POST', 'https://api.ostkost.ru/api/zavodkd/mail');
+
+        // 3. Отсылаем запрос
+        xhr.send();
+
+        // 4. Этот код сработает после того, как мы получим ответ сервера
+        xhr.onload = function () {
+            if (xhr.status != 200) {
+                // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                console.log(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+            } else {
+                // если всё прошло гладко, выводим результат
+                console.log(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+            }
+        };
+
+        xhr.onprogress = function (event) {
+            if (event.lengthComputable) {
+                console.log(`Получено ${event.loaded} из ${event.total} байт`);
+            } else {
+                console.log(`Получено ${event.loaded} байт`); // если в ответе нет заголовка Content-Length
+            }
+        };
+
+        xhr.onerror = function () {
+            console.log('Запрос не удался');
+        };
+    };
+
+    const handleSendAxios = async (e) => {
+        e.preventDefault();
+        setText(e.target.text.value);
+        console.log('#######____start__AXIOS');
+        const url = 'https://api.ostkost.ru/api/zavodkd/mail';
+        const data = {
+            to: 'zolfkn@yandex.ru',
+            subject: `Запрос прайса от ${name}`,
+            text: `${name} (тел: ${phone}, e-mail: ${email}), 
+            ${text}`,
+        };
+        const response = await axios.post(url, data);
+        console.log('DEBUG:', 'test => response', response);
+        if (response.status === 200) {
+            setMsgText('Запрос Отправлен');
+            setNotify(true);
+            toggleHide(1);
+        } else {
+            setMsgText('Ошибка');
+            setNotify(false);
+            toggleHide(2);
+        }
+        // axios
+        //     .post(url, data)
+        //     .then((response) => console.log(response))
+        //     .catch((error) => console.log(error));
+    };
+    const toggleHide = (anim) => {
+        setHide(false);
+        setAnimation(anim);
+        setTimeout(() => {
+            setHide(true);
+            setAnimation(0);
+        }, 1100);
+    };
+
     return (
         <section>
+            <div className={notify__wrap}>
+                <div
+                    animation={animation}
+                    className={cn(notify__message, {
+                        [hidden]: hide,
+                        [notify__message__green]: notify,
+                        [notify__message__red]: notify === false,
+                    })}
+                >
+                    {msgText}
+                </div>
+            </div>
             <div className={modalWindow}>
                 <p className={priceDescr}>
                     Для получения детальной информации воспользуйтесь формой обратной связи
                 </p>
-                <form action='#' className={contacts__form} id='input__name'>
+                <form
+                    action='#'
+                    className={contacts__form}
+                    id='input__name'
+                    onSubmit={(event) => handleSendAxios(event)}
+                >
                     <div className={input__wrap}>
                         <div className={contactsInput}>
                             <input
@@ -136,8 +278,8 @@ const PriceForm = ({ active, setActive }) => {
                                 name='phone'
                                 type='tel'
                                 maxLength='12'
-                                placeholder='+7 (9xx) xxx-xx-xx'
-                                pattern='7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}'
+                                placeholder='+7(9xx)xxx-xx-xx'
+                                pattern='\+7[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}'
                             />
                             {phoneDirty && phoneError && (
                                 <div className={contacts__error}>{phoneError}</div>
@@ -167,6 +309,9 @@ const PriceForm = ({ active, setActive }) => {
                     <div className={contacts__triq}>
                         <button disabled={!formValid} className={btnPrice} type='submit'>
                             ПОЛУЧИТЬ ПРАЙС
+                        </button>
+                        <button type='button' className={btnPrice} onClick={toggleHide}>
+                            СООБЩЕНИЕ
                         </button>
                         <div className={contacts__policy}>
                             <input

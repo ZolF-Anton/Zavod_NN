@@ -68,7 +68,7 @@ const CatalogList = () => {
             setError(true);
             setLoad(true);
         });
-    }, [btnName, clicker]);
+    }, [btnName]);
 
     useEffect(() => {
         setError(true);
@@ -128,6 +128,7 @@ const CatalogList = () => {
                 );
             }).length !== 0
         ) {
+            setBtnOff(true);
             setParts(
                 allData.filter((partName) => {
                     return (
@@ -136,7 +137,6 @@ const CatalogList = () => {
                     );
                 })
             );
-            setBtnOff(true);
         } else
             setParts(
                 allData.filter((partName) => {
@@ -168,12 +168,7 @@ const CatalogList = () => {
                 <Search btnName={btnName} cb={handleSearch} />
                 <Schema btnName={btnName} setBtnName={setBtnName} setClicker={setClicker} />
             </div>
-            <button
-                onClick={() => console.log('parts length', parts.length)}
-                className={cn(cataloglist_btn)}
-            >
-                TEST
-            </button>
+
             {load ? (
                 <Preloader />
             ) : (

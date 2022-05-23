@@ -33,7 +33,6 @@ const SliderImg = (props) => {
 
     useEffect(() => {
         setImgCount(data.allFile.edges.length);
-        console.log(slider.current);
     }, [data.allFile.edges.length]);
 
     return (

@@ -50,7 +50,7 @@ const PriceForm = ({ active, setActive }) => {
         }
     }, [nameError, phoneError, emailError, checkedFlag]);
 
-    const checkedHandler = () => {
+    const checkedHandler = (e) => {
         setCheckedFlag((prev) => !prev);
     };
 
@@ -118,8 +118,6 @@ const PriceForm = ({ active, setActive }) => {
     };
 
     const handleSend = async (e) => {
-        //console.log(e);
-        //console.log(e.target.text.value);
         setText(e.target.text.value);
         e.preventDefault();
 
@@ -146,16 +144,12 @@ const PriceForm = ({ active, setActive }) => {
                 },
                 body: a,
             });
-            console.log(response);
-            console.log(b);
+
             if (!response.ok) {
                 throw new Error('Ответ сети был не ok.');
             }
             const answer = await response.json();
-            console.log('@@@@@@@@@@@@@answer@@@@@@@', answer);
-        } catch (error) {
-            console.error('################', error);
-        }
+        } catch (error) {}
     };
 
     const handleSendXhr = async (e) => {
@@ -196,16 +190,16 @@ const PriceForm = ({ active, setActive }) => {
     const handleSendAxios = async (e) => {
         e.preventDefault();
         setText(e.target.text.value);
-        console.log('#######____start__AXIOS');
+
         const url = 'https://api.ostkost.ru/api/zavodkd/mail';
         const data = {
-            to: 'zolfkn@yandex.ru',
+            to: ':DDobrota@mail.ru',
             subject: `Запрос прайса от ${name}`,
-            text: `${name} (тел: ${phone}, e-mail: ${email}), 
+            text: `(тел: ${phone}, e-mail: ${email}), 
             ${text}`,
         };
         const response = await axios.post(url, data);
-        console.log('DEBUG:', 'test => response', response);
+
         if (response.status === 200) {
             setMsgText('Запрос Отправлен');
             setNotify(true);
@@ -317,7 +311,7 @@ const PriceForm = ({ active, setActive }) => {
                             <input
                                 type='checkbox'
                                 checked={checkedFlag}
-                                onChange={() => checkedHandler()}
+                                onChange={(e) => checkedHandler(e)}
                             />
                             <span>
                                 Я согласен(а) c{' '}

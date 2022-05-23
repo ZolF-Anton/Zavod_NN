@@ -1,5 +1,4 @@
 useEffect(() => {
-    console.log('######USE__EFFECT######');
     setError(true);
     setLoad(true);
 
@@ -52,14 +51,12 @@ let selectParts = (partName) => {
 //////////////////////////////////////////////
 
 useEffect(() => {
-    console.log('######USE__EFFECT######');
     setError(true);
     setLoad(true);
 
     fetch(`${strapiAPI}/${btnName}?${query}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log('data.data:', data.data);
             setParts(data.data);
             setError(false);
             setLoad(false);
@@ -74,9 +71,7 @@ useEffect(() => {
 
 let selectParts = (partName) => {
     const perPage = 3;
-    console.log('####partName####:', partName);
-    console.log('handleAllData', handleAllData());
-    console.log('allData', allData);
+
     setBtnName(partName);
     setLoad(true);
     fetch(`${strapiAPI}/${partName}?${query}`)

@@ -7,6 +7,7 @@ function Select(props) {
 
     let handleFilter = (event) => {
         setClicker((prev) => !prev);
+        setBtnName('');
         setBtnName(event.target.dataset.type);
     };
 

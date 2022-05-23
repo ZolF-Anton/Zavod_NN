@@ -203,6 +203,9 @@
 
 .scheme__part {
     z-index: 5;
+    img {
+        cursor: pointer;
+    }
 }
 .scheme__part:first-child {
     z-index: 10;

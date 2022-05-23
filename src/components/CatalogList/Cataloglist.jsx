@@ -68,7 +68,7 @@ const CatalogList = () => {
             setError(true);
             setLoad(true);
         });
-    }, [btnName]);
+    }, [btnName, clicker]);
 
     useEffect(() => {
         setError(true);
@@ -86,20 +86,15 @@ const CatalogList = () => {
     useEffect(() => {
         if (parts.length === allData.length) {
             setBtnOff(true);
-            console.log('setBtnOff', 'true', btnOff);
         } else {
-            console.log('setBtnOff', 'false', btnOff);
             setBtnOff(false);
         }
     }, [parts]);
 
     const handleBtnOff = (dData) => {
-        console.log(parts.length, allData.length);
         if (parts.length === allData.length && allData.length !== 0) {
             setBtnOff(true);
-            console.log('setBtnOff', 'true', btnOff);
         } else {
-            console.log('setBtnOff', 'false', btnOff);
             setBtnOff(false);
         }
     };
@@ -109,10 +104,9 @@ const CatalogList = () => {
     };
 
     const handleAllData = (data) => {
-        const perPage = 3;
+        const perPage = 9;
         let increment = perPage * counter;
-        console.log('#####handleAllData####:', increment);
-        console.log('#####parts.length####:', parts.length);
+
         return data.slice(0, increment);
     };
 
@@ -146,7 +140,6 @@ const CatalogList = () => {
         setBtnOff(true);
     };
     const filteredByAssembler = (str) => {
-        console.log(str);
         setAllData(
             allData.filter((assembler) => {
                 return assembler.attributes.type.toLowerCase().indexOf(str.toLowerCase()) !== -1;

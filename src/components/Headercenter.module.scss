@@ -33,7 +33,7 @@
 .kalimagi {
     display: flex;
     flex-direction: column-reverse;
-
+    justify-content: center;
     gap: 1.5rem;
 }
 .img-auto {
@@ -45,6 +45,25 @@
     background: rgba(255, 255, 255, 0.85);
     border-radius: 50%;
 }
+@media screen and (max-width: 3840px) {
+    .title {
+        font-size: 60px;
+        padding: 14rem 0 0 12rem;
+    }
+    .kalimagi {
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .title {
+        padding: 11rem 0 0 7rem;
+    }
+    .kalimagi {
+        padding-top: 12rem;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     .title {
         padding: 9rem 0 0 5rem;

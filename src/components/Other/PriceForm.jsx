@@ -127,10 +127,7 @@ const PriceForm = ({ active, setActive }) => {
             text: '${name} (тел: ${phone}, e-mail: ${email}), ${text}',
         };
         const a = JSON.stringify(data);
-        const b =
-            '{"to":"zolfkn@yandex.ru","subject":"Запарос прайса (XVII)","text":"name (тел: phone, e-mail: email),{text}"}';
         const apiLink = 'https://api.ostkost.ru/api/zavodkd/mail';
-        const apiLink2 = 'https://ptsv2.com/t/1nilm-1653047633/post';
 
         try {
             const response = await fetch(apiLink, {
@@ -304,9 +301,7 @@ const PriceForm = ({ active, setActive }) => {
                         <button disabled={!formValid} className={btnPrice} type='submit'>
                             ПОЛУЧИТЬ ПРАЙС
                         </button>
-                        <button type='button' className={btnPrice} onClick={toggleHide}>
-                            СООБЩЕНИЕ
-                        </button>
+
                         <div className={contacts__policy}>
                             <input
                                 type='checkbox'

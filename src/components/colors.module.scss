@@ -1,3 +1,8 @@
+//**************  global css  ***************
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 $Corp-Blue: #3576ad;
 $Corp-Red: #a62028;
 $Corp-Black: #2b2a2e;
@@ -10,11 +15,6 @@ $Ctr-Gray: #cfdee3;
 $Ctr-White: #e6f6fc;
 $White: white;
 $ActBlue: linear-gradient(90deg, #3576ad 0%, #30e3cb 186.42%);
-
-//**************  global css  ***************
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 section {
     padding: 60px 10rem;

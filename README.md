@@ -4,18 +4,24 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+ Willkommen to Zavod. It's based on Gatsby (One of thr best SSG).
 </h1>
+<h3>
+ <a href="https://zavod-kd.ru/">
+    You can visit it here: https://zavod-kd.ru/
+  </a>
+</h3>
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Start project.**
 
     Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    # To start Gatsby site
+    npm run start
+    yarn start
     ```
 
 2.  **Start developing.**
@@ -24,31 +30,100 @@
 
     ```shell
     cd my-gatsby-site/
-    npm run develop
+    npm run build
+    npm build
     ```
 
-3.  **Open the code and start customizing!**
 
-    Your site is now running at http://localhost:8000!
+## 📌 About
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+Zavod project is built on the REACT framework — Gatsby.js.</br>
+The carousel receives pictures through GraphQL.</br>
+Zavod's data is available from Strapi.</br>
+Request to API - via Axios.</br>
 
-4.  **Learn more**
+<h3 align="center">Languages and Tools:</h3>
+            <p align="center">
+  <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://www.vectorlogo.zone/logos/gatsbyjs/gatsbyjs-icon.svg"
+                        alt="gatsby"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+   <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+                        alt="html5"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+   <a href="https://sass-lang.com" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+                        alt="sass"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+  
+   <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+                        alt="git"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+   <a href="https://graphql.org" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"
+                        alt="graphql"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+   <a href="https://webpack.js.org" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg"
+                        alt="webpack"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+    <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg"
+                        alt="figma"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+  
+  <a href="https://postman.com" target="_blank" rel="noreferrer">
+                    <img
+                        src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+                        alt="postman"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+  
+  
+</p>
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### ScreenShot
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+<p>
+ <img
+                        src="https://anton-zolf.su/img/zavod_1.PNG"
+                        alt="Zavod view"
+                        width="605"
+                        height="450"
+                    />
+</p>
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)

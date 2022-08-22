@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
- Willkommen to Zavod. It's based on Gatsby (One of thr best SSG).
+ Willkommen to Zavod. It's based on Gatsby (One of the best SSG).
 </h1>
 <h3>
  <a href="https://zavod-kd.ru/">
